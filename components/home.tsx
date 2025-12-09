@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
+
 import {
   PlayCircle,
   Users,
@@ -151,9 +153,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Stats Section */}
-      <section className="relative w-full">
+      {/* <section className="relative w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
           <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -187,9 +188,55 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section> */}
+
+      <section className="relative w-full">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
+          <div className="grid md:grid-cols-3 gap-8 items-center">
+            {/* Small Stats Card */}
+            <motion.div
+              className="md:col-start-1 md:row-start-1 md:-mt-32 relative bg-white p-8 rounded-2xl shadow-2xl cursor-pointer"
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "#2563EB",
+                color: "#fff",
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className="space-y-2">
+                <div className="text-5xl font-bold">1452+</div>
+                <div className="font-medium">Happy Clients</div>
+              </div>
+            </motion.div>
+
+            {/* Main Stats Card */}
+            <motion.div
+              className="md:col-start-2 md:row-start-1 md:col-span-2 md:-mt-20 relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-tl-3xl rounded-tr-none rounded-bl-none rounded-br-3xl p-8 md:p-12 shadow-2xl cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className="absolute -right-32 -bottom-32 w-96 h-96 bg-blue-500/20 rounded-full"></div>
+              <div className="relative z-10 flex items-start justify-between">
+                <div className="max-w-lg space-y-4">
+                  <p className="text-xl leading-relaxed font-medium">
+                    We deliver innovative web, SaaS, and digital solutions. See
+                    how DevNTom empowers businesses to grow, perform, and
+                    succeed.
+                  </p>
+                </div>
+                <button className="flex-shrink-0 ml-4">
+                  <div className="w-16 h-16 bg-red-500 rounded-lg flex items-center justify-center hover:bg-red-600 transition shadow-lg">
+                    <PlayCircle className="w-8 h-8 text-white fill-white" />
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
-      {/* Clients Section */}
+      {/* logos Section */}
       <section className="w-full bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-12 md:gap-16">
           {clients.map((client, idx) => (
@@ -210,7 +257,8 @@ export default function HomePage() {
       </section>
 
       {/* Mission Section */}
-      <section className="w-full py-16 px-4 md:py-24 bg-white">
+
+      {/* <section className="w-full py-16 px-4 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="relative">
             <img
@@ -322,13 +370,141 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section> */}
+
+      {/* Mission Section */}
+      <section className="w-full py-16 px-4 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Image & Core Value */}
+          <div className="relative">
+            <img
+              src="/diverse-team-professionals-collaborating-in-office.jpg"
+              alt="Team collaborating on business solutions"
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 -mb-12 lg:-mb-16">
+              <div className="bg-blue-600 text-white rounded-2xl p-6 md:p-8 shadow-lg max-w-md">
+                <h3 className="text-xl md:text-2xl font-bold mb-6">
+                  Our Core Value
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <span className="text-green-300 font-bold text-lg flex-shrink-0">
+                      ✓
+                    </span>
+                    <p className="text-sm md:text-base">
+                      Focusing on real solutions for your success.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-green-300 font-bold text-lg flex-shrink-0">
+                      ✓
+                    </span>
+                    <p className="text-sm md:text-base">
+                      We provide accurate, human support.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-green-300 font-bold text-lg flex-shrink-0">
+                      ✓
+                    </span>
+                    <p className="text-sm md:text-base">
+                      We save you time, cut costs, and boost results.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Text & Mission Cards */}
+          <div className="lg:pl-8 pt-16 lg:pt-0">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-1 h-6 bg-blue-600"></div>
+              <p className="text-blue-600 font-semibold text-sm md:text-base">
+                Your Growth, Our Mission
+              </p>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              We simplify your business, so you can grow faster.
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg mb-8 leading-relaxed">
+              At Zyrom, we help businesses grow by streamlining operations with
+              smart digital solutions. Our expert team saves you time, reduces
+              costs, and boosts efficiency—so you can focus on scaling with
+              confidence.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Boost Productivity with Smart Solutions",
+                  desc: "At Zyrom, we help businesses maximize efficiency by automating repetitive tasks and streamlining workflows—so your team can focus on what truly matters.",
+                  icon: (
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Save Time, Focus on Growth",
+                  desc: "Zyrom's smart digital solutions handle repetitive and time-consuming tasks, freeing your team to focus on strategic work and business growth.",
+                  icon: (
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  ),
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={i}
+                  className="bg-blue-500 rounded-tl-3xl rounded-tr-none rounded-bl-none rounded-br-3xl p-6 text-white cursor-pointer"
+                  whileHover={{ backgroundColor: "#2563EB", scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div className="bg-blue-700 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    {card.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-blue-100">
+                    {card.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="w-full py-12 md:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 bg-blue-600 rounded-3xl p-8 md:p-12 shadow-xl grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+      {/* stats bar */}
+      <section className="w-auto m-5 py-12 md:py-20 bg-gray-50">
+        <div className="w-full bg-blue-600 rounded-tl-3xl rounded-tr-none rounded-bl-none rounded-br-3xl p-8 md:p-12 shadow-xl grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {statsBar.map((stat, index) => {
             const Icon = stat.icon;
+            const numericValue = parseInt(stat.value.replace(/\D/g, ""), 10);
+
             return (
               <div
                 key={index}
@@ -336,7 +512,13 @@ export default function HomePage() {
               >
                 <Icon className="w-12 h-12 mb-4 text-blue-100" />
                 <div className="text-3xl md:text-4xl font-bold">
-                  {stat.value}
+                  <CountUp
+                    start={0}
+                    end={numericValue}
+                    duration={2.5}
+                    separator=","
+                  />
+                  {stat.value.includes("+") ? "+" : ""}
                 </div>
                 <div className="text-blue-100 text-sm md:text-base mt-2">
                   {stat.label}
@@ -348,7 +530,8 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="w-full py-16 md:py-24 bg-white">
+
+      {/* <section className="w-full py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
@@ -404,8 +587,158 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section className="w-full py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* HEADER */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <div className="inline-block border-l-4 border-blue-600 pl-4 mb-4">
+                <p className="text-sm font-semibold text-blue-600">
+                  Our Services
+                </p>
+              </div>
 
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                We Provide Best Virtual Assistant Service
+              </h2>
+
+              <button
+                className="
+            bg-blue-600 hover:bg-blue-700 text-white font-semibold
+            py-3 px-8 transition
+            rounded-tl-2xl rounded-br-2xl
+            rounded-tr-none rounded-bl-none
+          "
+              >
+                View All Services
+              </button>
+            </div>
+          </div>
+
+          {/* SERVICES */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, idx) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={idx}
+                  className="
+              group p-8 border border-gray-200 bg-white
+              transition-all duration-300
+              hover:bg-blue-600 hover:border-blue-600
+              rounded-tl-3xl rounded-br-3xl
+              rounded-tr-none rounded-bl-none
+            "
+                >
+                  {/* ICON */}
+                  <div
+                    className="
+                w-12 h-12 mb-6 flex items-center justify-center transition
+                bg-blue-100 group-hover:bg-white
+                rounded-tl-xl rounded-br-xl
+                rounded-tr-none rounded-bl-none
+              "
+                  >
+                    <Icon className="w-6 h-6 text-blue-600 group-hover:text-blue-600" />
+                  </div>
+
+                  {/* TITLE */}
+                  <h3
+                    className="
+                text-xl font-bold mb-4 transition
+                text-gray-900 group-hover:text-white
+              "
+                  >
+                    {service.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+                  <p
+                    className="
+                text-gray-600 leading-relaxed transition
+                group-hover:text-blue-100
+              "
+                  >
+                    {service.description}
+                  </p>
+
+                  {/* READ MORE — HIDDEN BY DEFAULT */}
+                  <div
+                    className="
+                mt-6 opacity-0 translate-y-2
+                transition-all duration-300
+                group-hover:opacity-100 group-hover:translate-y-0
+              "
+                  >
+                    <a
+                      href="#"
+                      className="text-white font-semibold inline-flex items-center"
+                    >
+                      Read More
+                      <span className="ml-2 transition group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* SOFTWARE SOLUTIONS CARD (STATIC FEATURE CARD) */}
+            <div
+              className="
+    group md:col-span-1 md:row-span-2
+    p-8 border border-gray-200 bg-white
+    transition-all duration-300
+    hover:bg-blue-600 hover:border-blue-600
+    rounded-tl-4xl rounded-br-4xl
+    rounded-tr-none rounded-bl-none
+    flex flex-col justify-center
+  "
+            >
+              <h3
+                className="
+      text-2xl font-bold mb-4 transition
+      text-gray-900 group-hover:text-white
+    "
+              >
+                Software Solutions
+              </h3>
+
+              <p
+                className="
+      text-gray-600 leading-relaxed mb-6 transition
+      group-hover:text-blue-100
+    "
+              >
+                We develop custom desktop apps, ERP/CRM systems, and cloud-based
+                SaaS platforms to automate and optimize your business
+                operations.
+              </p>
+
+              {/* READ MORE — HIDDEN BY DEFAULT */}
+              <div
+                className="
+      opacity-0 translate-y-2
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0
+    "
+              >
+                <a
+                  href="#"
+                  className="inline-flex items-center font-semibold text-white"
+                >
+                  Read More
+                  <span className="ml-2 transition group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* CTA Section */}
       <section className="relative w-full py-24 overflow-hidden">
         <div
@@ -436,11 +769,9 @@ export default function HomePage() {
           </Button>
         </div>
       </section>
-
       {/* ===================================================================== */}
       {/* ================= NEW SECTION (Added After CTA) ===================== */}
       {/* ===================================================================== */}
-
       <motion.section
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -532,7 +863,6 @@ export default function HomePage() {
           </motion.button>
         </div>
       </motion.section>
-
       {/* ================= HOW ZYROM WORKS SECTION ================= */}
       <section className="px-6 md:px-16 lg:px-28 py-20 text-center">
         {/* Small heading */}
