@@ -3,136 +3,161 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-[#0047AB] text-white pt-20">
-      
       {/* TOP CONTACT BOXES */}
-      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-28">
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-10">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {/* Phone */}
-          <div
-            className="
-      bg-[#012B57]
-      px-8 py-7
-      flex items-center gap-5
-      rounded-tl-3xl rounded-br-3xl
-      rounded-tr-none rounded-bl-none
-    "
+          <a
+            href="tel:+923256036838"
+            className="bg-[#012B57]
+      p-9
+      flex items-center gap-6
+      min-h-[160px]
+      rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none
+      hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
           >
-            <div className="text-3xl">📞</div>
-            <div>
-              <p className="text-lg font-semibold leading-tight">
-                +92 334 4655700
+            <div className="text-4xl shrink-0">📞</div>
+            <div className="min-w-0">
+              <p className="text-2xl font-semibold leading-tight whitespace-nowrap">
+                +92 325 6036838
               </p>
-              <p className="text-sm text-white/70 mt-1">Give Us A Call</p>
+              <p className="text-base text-white/70 mt-1">Give Us A Call</p>
             </div>
-          </div>
+          </a>
 
           {/* Email */}
-          <div
-            className="
-      bg-[#FF5A24]
-      px-8 py-7
-      flex items-center gap-5
-      rounded-tl-3xl rounded-br-3xl
-      rounded-tr-none rounded-bl-none
-    "
+          <a
+            href="mailto:devntomsolutions@gmail.com"
+            className="bg-[#FF5A24]
+      p-9
+      flex items-center gap-6
+      min-h-[160px]
+      rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none
+      hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
           >
-            <div className="text-3xl">✉️</div>
-            <div>
-              <p className="text-lg font-semibold leading-tight">
-                Admin@zyrom.com
+            <div className="text-4xl shrink-0">✉️</div>
+            <div className="min-w-0">
+              <p
+                className="
+          text-lg md:text-xl font-semibold leading-snug
+          break-all
+        "
+              >
+                Admin@devntomsolutions.com
               </p>
-              <p className="text-sm text-white/80 mt-1">Drop Us A Line</p>
+              <p className="text-base text-white/80 mt-1">Drop Us A Line</p>
             </div>
-          </div>
+          </a>
 
           {/* Location */}
-          <div
-            className="
-      bg-[#012B57]
-      px-8 py-7
-      flex items-center gap-5
-      rounded-tl-3xl rounded-br-3xl
-      rounded-tr-none rounded-bl-none
-    "
+          <a
+            href="https://www.google.com/maps?q=Gulberg%203%20Lahore"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#012B57]
+      p-9
+      flex items-center gap-6
+      min-h-[160px]
+      rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none
+      hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
           >
-            <div className="text-3xl">📍</div>
-            <div>
-              <p className="text-lg font-semibold leading-tight">
+            <div className="text-4xl shrink-0">📍</div>
+            <div className="min-w-0">
+              <p className="text-lg font-semibold leading-snug">
                 M80 Ashyana Shopping Center
                 <br />
-                Gulberg 3 Lahore
+                Gulberg 3, Lahore
               </p>
-              <p className="text-sm text-white/70 mt-1">Office Location</p>
+              <p className="text-base text-white/70 mt-1">Office Location</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
       {/* MIDDLE CONTENT */}
-      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-28 pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-10 pb-16">
         <div className="grid md:grid-cols-4 gap-14">
-          {/* Logo Column */}
+          {/* Logo */}
           <div>
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Zyrom" className="w-9 h-9" />
-              <span className="text-xl font-bold tracking-wide">ZyRoM™</span>
+              <img src="/logo.svg" alt="Devntom" className="w-10 h-10" />
+              <span className="text-2xl font-bold tracking-wide">Devntom™</span>
             </div>
 
-            <p className="text-white/80 mt-5 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/85 mt-6 text-base leading-relaxed max-w-xs">
               Helping businesses grow online with tailored digital solutions.
             </p>
-
-            <div className="flex gap-4 mt-6">
-              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black text-sm">
-                f
-              </div>
-              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black text-sm">
-                ◎
-              </div>
-              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-black text-sm">
-                ▶
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-5">Quick Links</h3>
-            <ul className="space-y-3 text-white/80 text-sm">
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Pricing</li>
-              <li>Blog</li>
-              <li>Contact</li>
+            <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
+            <ul className="space-y-4 text-white/85 text-base">
+              <li>
+                <a href="/about" className="hover:text-white">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="/services" className="hover:text-white">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="/pricing" className="hover:text-white">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="hover:text-white">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-white">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-5">Services</h3>
-            <ul className="space-y-3 text-white/80 text-sm">
-              <li>Website Development</li>
-              <li>Software Solutions</li>
-              <li>WhatsApp Solutions</li>
-              <li>SEO (Search Engine Optimization)</li>
-              <li>Digital Marketing</li>
+            <h3 className="font-semibold text-lg mb-6">Services</h3>
+            <ul className="space-y-4 text-white/85 text-base">
+              <li>
+                <a href="/services/website-development">Website Development</a>
+              </li>
+              <li>
+                <a href="/services/software-solutions">Software Solutions</a>
+              </li>
+              <li>
+                <a href="/services/whatsapp">WhatsApp Solutions</a>
+              </li>
+              <li>
+                <a href="/services/seo">SEO Optimization</a>
+              </li>
+              <li>
+                <a href="/services/marketing">Digital Marketing</a>
+              </li>
             </ul>
           </div>
 
           {/* Map */}
           <div className="w-full">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.0512820682327!2d74.3436!3d31.5204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190f1e3f3d8be7%3A0xb65d5e0d22d1bd0!2sLiberty%20Market!5e0!3m2!1sen!2s!4v1700000000000"
-              className="rounded-xl w-full h-[190px] border-none"
+              src="https://www.google.com/maps?q=Gulberg%203%20Lahore&output=embed"
+              className="w-full h-[240px] border-0"
               loading="lazy"
-            ></iframe>
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="border-t border-white/20 py-4 text-center text-xs text-white/70">
-        Copyright © 2025 Zyrom. All rights reserved.
+      <div className="border-t border-white/20 py-5 text-center text-sm text-white/70">
+        © 2025 Devntom. All rights reserved.
       </div>
     </footer>
   );
