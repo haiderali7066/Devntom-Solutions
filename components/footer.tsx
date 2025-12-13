@@ -4,21 +4,25 @@ const Footer = () => {
   return (
     <footer className="bg-[#0047AB] text-white pt-20">
       {/* TOP CONTACT BOXES */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-10">
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-15 ">
+        <div className="grid md:grid-cols-3 gap-8 mb-24 ">
           {/* Phone */}
           <a
             href="tel:+923256036838"
-            className="bg-[#012B57]
-      p-9
-      flex items-center gap-6
-      min-h-[160px]
-      rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none
-      hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+            className="
+    bg-[#012B57]
+    p-9
+    flex items-center gap-6
+    min-h-[100px] 
+    rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none
+    hover:-translate-y-2 hover:shadow-2xl transition-all duration-300
+
+    lg:h-[15vh]   <!-- THIS MAKES HEIGHT 35% OF SCREEN ON LARGE -->
+  "
           >
             <div className="text-4xl shrink-0">📞</div>
             <div className="min-w-0">
-              <p className="text-2xl font-semibold leading-tight whitespace-nowrap">
+              <p className="text-xl font-semibold leading-tight whitespace-nowrap">
                 +92 325 6036838
               </p>
               <p className="text-base text-white/70 mt-1">Give Us A Call</p>
@@ -31,7 +35,7 @@ const Footer = () => {
             className="bg-[#FF5A24]
       p-9
       flex items-center gap-6
-      min-h-[160px]
+      min-h-[100px] lg:h-[15vh]
       rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none
       hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
           >
@@ -57,7 +61,7 @@ const Footer = () => {
             className="bg-[#012B57]
       p-9
       flex items-center gap-6
-      min-h-[160px]
+      min-h-[100px] lg:h-[15vh]
       rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none
       hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
           >
@@ -75,7 +79,7 @@ const Footer = () => {
       </div>
 
       {/* MIDDLE CONTENT */}
-      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-10 pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-15 pb-16">
         <div className="grid md:grid-cols-4 gap-14">
           {/* Logo */}
           <div>

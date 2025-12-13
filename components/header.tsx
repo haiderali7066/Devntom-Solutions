@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Top bar */}
-      <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+      {/* <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-sm text-gray-600">
           <div className="flex items-center gap-6">
             <a
@@ -56,10 +56,10 @@ export default function Header() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main nav */}
-      <nav className="bg-white border-b border-gray-200">
+      <nav className="bg-white border-b border-gray-200 ">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link
@@ -67,9 +67,9 @@ export default function Header() {
             className="flex items-center gap-2 font-bold text-xl text-blue-600"
           >
             <div className="w-8 h-8 bg-blue-600 rounded text-white flex items-center justify-center font-bold">
-              DT
+              DS
             </div>
-            <span>DevNTom</span>
+            <span>Devntom Solutions</span>
           </Link>
 
           {/* Desktop nav */}
@@ -139,7 +139,7 @@ export default function Header() {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded px-6">
               Free Consultation
             </Button>
           </div>

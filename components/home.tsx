@@ -347,6 +347,159 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="w-full py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* HEADER */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <div className="inline-block border-l-4 border-blue-600 pl-4 mb-4">
+                <p className="text-sm font-semibold text-blue-600">
+                  Our Services
+                </p>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                We Provide Best Virtual Assistant Service
+              </h2>
+
+              <button
+                className="
+            bg-blue-600 hover:bg-blue-700 text-white font-semibold
+            py-3 px-8 transition
+            rounded-tl-2xl rounded-br-2xl
+            rounded-tr-none rounded-bl-none
+          "
+              >
+                View All Services
+              </button>
+            </div>
+          </div>
+
+          {/* SERVICES */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, idx) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={idx}
+                  className="
+              group p-8 border border-gray-200 bg-white
+              transition-all duration-300
+              hover:bg-blue-600 hover:border-blue-600
+              rounded-tl-3xl rounded-br-3xl
+              rounded-tr-none rounded-bl-none
+            "
+                >
+                  {/* ICON */}
+                  <div
+                    className="
+                w-12 h-12 mb-6 flex items-center justify-center transition
+                bg-blue-100 group-hover:bg-white
+                rounded-tl-xl rounded-br-xl
+                rounded-tr-none rounded-bl-none
+              "
+                  >
+                    <Icon className="w-6 h-6 text-blue-600 group-hover:text-blue-600" />
+                  </div>
+
+                  {/* TITLE */}
+                  <h3
+                    className="
+                text-xl font-bold mb-4 transition
+                text-gray-900 group-hover:text-white
+              "
+                  >
+                    {service.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+                  <p
+                    className="
+                text-gray-600 leading-relaxed transition
+                group-hover:text-blue-100
+              "
+                  >
+                    {service.description}
+                  </p>
+
+                  {/* READ MORE — HIDDEN BY DEFAULT */}
+                  <div
+                    className="
+                mt-6 opacity-0 translate-y-2
+                transition-all duration-300
+                group-hover:opacity-100 group-hover:translate-y-0
+              "
+                  >
+                    <a
+                      href="#"
+                      className="text-white font-semibold inline-flex items-center"
+                    >
+                      Read More
+                      <span className="ml-2 transition group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* SOFTWARE SOLUTIONS CARD (STATIC FEATURE CARD) */}
+            <div
+              className="
+    group md:col-span-1 md:row-span-2
+    p-8 border border-gray-200 bg-white
+    transition-all duration-300
+    hover:bg-blue-600 hover:border-blue-600
+    rounded-tl-4xl rounded-br-4xl
+    rounded-tr-none rounded-bl-none
+    flex flex-col justify-center
+  "
+            >
+              <h3
+                className="
+      text-2xl font-bold mb-4 transition
+      text-gray-900 group-hover:text-white
+    "
+              >
+                Software Solutions
+              </h3>
+
+              <p
+                className="
+      text-gray-600 leading-relaxed mb-6 transition
+      group-hover:text-blue-100
+    "
+              >
+                We develop custom desktop apps, ERP/CRM systems, and cloud-based
+                SaaS platforms to automate and optimize your business
+                operations.
+              </p>
+
+              {/* READ MORE — HIDDEN BY DEFAULT */}
+              <div
+                className="
+      opacity-0 translate-y-2
+      transition-all duration-300
+      group-hover:opacity-100 group-hover:translate-y-0
+    "
+              >
+                <a
+                  href="#"
+                  className="inline-flex items-center font-semibold text-white"
+                >
+                  Read More
+                  <span className="ml-2 transition group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
       <section className="w-full py-16 px-4 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -504,159 +657,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="w-full py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* HEADER */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div>
-              <div className="inline-block border-l-4 border-blue-600 pl-4 mb-4">
-                <p className="text-sm font-semibold text-blue-600">
-                  Our Services
-                </p>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                We Provide Best Virtual Assistant Service
-              </h2>
-
-              <button
-                className="
-            bg-blue-600 hover:bg-blue-700 text-white font-semibold
-            py-3 px-8 transition
-            rounded-tl-2xl rounded-br-2xl
-            rounded-tr-none rounded-bl-none
-          "
-              >
-                View All Services
-              </button>
-            </div>
-          </div>
-
-          {/* SERVICES */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, idx) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={idx}
-                  className="
-              group p-8 border border-gray-200 bg-white
-              transition-all duration-300
-              hover:bg-blue-600 hover:border-blue-600
-              rounded-tl-3xl rounded-br-3xl
-              rounded-tr-none rounded-bl-none
-            "
-                >
-                  {/* ICON */}
-                  <div
-                    className="
-                w-12 h-12 mb-6 flex items-center justify-center transition
-                bg-blue-100 group-hover:bg-white
-                rounded-tl-xl rounded-br-xl
-                rounded-tr-none rounded-bl-none
-              "
-                  >
-                    <Icon className="w-6 h-6 text-blue-600 group-hover:text-blue-600" />
-                  </div>
-
-                  {/* TITLE */}
-                  <h3
-                    className="
-                text-xl font-bold mb-4 transition
-                text-gray-900 group-hover:text-white
-              "
-                  >
-                    {service.title}
-                  </h3>
-
-                  {/* DESCRIPTION */}
-                  <p
-                    className="
-                text-gray-600 leading-relaxed transition
-                group-hover:text-blue-100
-              "
-                  >
-                    {service.description}
-                  </p>
-
-                  {/* READ MORE — HIDDEN BY DEFAULT */}
-                  <div
-                    className="
-                mt-6 opacity-0 translate-y-2
-                transition-all duration-300
-                group-hover:opacity-100 group-hover:translate-y-0
-              "
-                  >
-                    <a
-                      href="#"
-                      className="text-white font-semibold inline-flex items-center"
-                    >
-                      Read More
-                      <span className="ml-2 transition group-hover:translate-x-1">
-                        →
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* SOFTWARE SOLUTIONS CARD (STATIC FEATURE CARD) */}
-            <div
-              className="
-    group md:col-span-1 md:row-span-2
-    p-8 border border-gray-200 bg-white
-    transition-all duration-300
-    hover:bg-blue-600 hover:border-blue-600
-    rounded-tl-4xl rounded-br-4xl
-    rounded-tr-none rounded-bl-none
-    flex flex-col justify-center
-  "
-            >
-              <h3
-                className="
-      text-2xl font-bold mb-4 transition
-      text-gray-900 group-hover:text-white
-    "
-              >
-                Software Solutions
-              </h3>
-
-              <p
-                className="
-      text-gray-600 leading-relaxed mb-6 transition
-      group-hover:text-blue-100
-    "
-              >
-                We develop custom desktop apps, ERP/CRM systems, and cloud-based
-                SaaS platforms to automate and optimize your business
-                operations.
-              </p>
-
-              {/* READ MORE — HIDDEN BY DEFAULT */}
-              <div
-                className="
-      opacity-0 translate-y-2
-      transition-all duration-300
-      group-hover:opacity-100 group-hover:translate-y-0
-    "
-              >
-                <a
-                  href="#"
-                  className="inline-flex items-center font-semibold text-white"
-                >
-                  Read More
-                  <span className="ml-2 transition group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="relative w-full py-24 overflow-hidden">
         <div
@@ -685,6 +685,63 @@ export default function HomePage() {
           <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-lg transition-colors">
             Start Consultation
           </Button>
+        </div>
+      </section>
+
+      {/* ================= HOW Devntom WORKS SECTION ================= */}
+      <section className="px-6 md:px-16 lg:px-28 py-20 text-center">
+        {/* Small heading */}
+        <p className="text-blue-700 font-semibold mb-2">— How Devntom Works</p>
+
+        {/* Main title */}
+        <h2 className="text-3xl md:text-4xl font-bold">
+          Simplifying Your Path to Success
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-gray-600 max-w-2xl mx-auto mt-4">
+          Devntom streamlines your business processes with smart digital
+          solutions, so you can focus on growth and achieve success
+          effortlessly:
+        </p>
+
+        {/* Steps */}
+        <div className="grid md:grid-cols-3 gap-12 mt-16">
+          {/* STEP 1 */}
+          <div>
+            <h1 className="text-6xl font-bold text-gray-200">01</h1>
+            <div className="w-20 h-[1px] bg-gray-300 mx-auto my-3"></div>
+
+            <h3 className="text-xl font-semibold">Share Your Needs</h3>
+            <p className="text-gray-600 mt-2">
+              Tell us about your project requirements and business goals. We
+              listen carefully to understand exactly what you need to succeed.
+            </p>
+          </div>
+
+          {/* STEP 2 */}
+          <div>
+            <h1 className="text-6xl font-bold text-gray-200">02</h1>
+            <div className="w-20 h-[1px] bg-gray-300 mx-auto my-3"></div>
+
+            <h3 className="text-xl font-semibold">Meet Your Dedicated Team</h3>
+            <p className="text-gray-600 mt-2">
+              We’ll match you with pre-vetted experts perfectly suited for your
+              project. Review and approve your team before we begin.
+            </p>
+          </div>
+
+          {/* STEP 3 */}
+          <div>
+            <h1 className="text-6xl font-bold text-gray-200">03</h1>
+            <div className="w-20 h-[1px] bg-gray-300 mx-auto my-3"></div>
+
+            <h3 className="text-xl font-semibold">Launch & Monitor Progress</h3>
+            <p className="text-gray-600 mt-2">
+              Your project kicks off immediately with regular updates and
+              transparent progress tracking for complete peace of mind.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -782,63 +839,6 @@ export default function HomePage() {
           </motion.button>
         </div>
       </motion.section>
-
-      {/* ================= HOW Devntom WORKS SECTION ================= */}
-      <section className="px-6 md:px-16 lg:px-28 py-20 text-center">
-        {/* Small heading */}
-        <p className="text-blue-700 font-semibold mb-2">— How Devntom Works</p>
-
-        {/* Main title */}
-        <h2 className="text-3xl md:text-4xl font-bold">
-          Simplifying Your Path to Success
-        </h2>
-
-        {/* Subtitle */}
-        <p className="text-gray-600 max-w-2xl mx-auto mt-4">
-          Devntom streamlines your business processes with smart digital
-          solutions, so you can focus on growth and achieve success
-          effortlessly:
-        </p>
-
-        {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-12 mt-16">
-          {/* STEP 1 */}
-          <div>
-            <h1 className="text-6xl font-bold text-gray-200">01</h1>
-            <div className="w-20 h-[1px] bg-gray-300 mx-auto my-3"></div>
-
-            <h3 className="text-xl font-semibold">Share Your Needs</h3>
-            <p className="text-gray-600 mt-2">
-              Tell us about your project requirements and business goals. We
-              listen carefully to understand exactly what you need to succeed.
-            </p>
-          </div>
-
-          {/* STEP 2 */}
-          <div>
-            <h1 className="text-6xl font-bold text-gray-200">02</h1>
-            <div className="w-20 h-[1px] bg-gray-300 mx-auto my-3"></div>
-
-            <h3 className="text-xl font-semibold">Meet Your Dedicated Team</h3>
-            <p className="text-gray-600 mt-2">
-              We’ll match you with pre-vetted experts perfectly suited for your
-              project. Review and approve your team before we begin.
-            </p>
-          </div>
-
-          {/* STEP 3 */}
-          <div>
-            <h1 className="text-6xl font-bold text-gray-200">03</h1>
-            <div className="w-20 h-[1px] bg-gray-300 mx-auto my-3"></div>
-
-            <h3 className="text-xl font-semibold">Launch & Monitor Progress</h3>
-            <p className="text-gray-600 mt-2">
-              Your project kicks off immediately with regular updates and
-              transparent progress tracking for complete peace of mind.
-            </p>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
