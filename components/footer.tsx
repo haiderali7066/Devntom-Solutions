@@ -84,7 +84,7 @@ const Footer = () => {
           {/* Logo */}
           <div>
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Devntom" className="w-10 h-10" />
+              <img src="/footerlogo.svg" alt="Devntom" className="w-10 h-10" />
               <span className="text-2xl font-bold tracking-wide">Devntom™</span>
             </div>
 
