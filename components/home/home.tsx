@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Marquee  from "@/components/home/marque";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import { Button } from "@/components/ui/button";
 
 import {
   PlayCircle,
@@ -670,9 +669,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================================================================== */}
       {/* ================= NEW SECTION (Added After CTA) ===================== */}
-      {/* ===================================================================== */}
       <motion.section
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
