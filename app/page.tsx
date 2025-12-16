@@ -9,6 +9,8 @@ import StatsBar from "@/components/home/StatsBar";
 import CtaSection from "@/components/home/CtaSection";
 import HowItWorks from "@/components/home/HowItWorks";
 import WhyUs from "@/components/home/WhyUs";
+import PortfolioSection from "@/components/home/PortfolioSection";
+
 
 export default function Home() {
   return (
@@ -20,6 +22,7 @@ export default function Home() {
       <Mission />
       <StatsBar />
       <CtaSection />
+      <PortfolioSection />;
       <HowItWorks />
       <WhyUs />
       {/* <Footer /> */}
