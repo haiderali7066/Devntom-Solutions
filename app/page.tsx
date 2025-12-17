@@ -4,6 +4,7 @@
 import Hero from "@/components/home/Hero";
 import Logos from "@/components/home/Logos";
 import Services from "@/components/home/Services";
+import Servicesgsap from "@/components/home/Services-gsap";
 import Mission from "@/components/home/Mission";
 import StatsBar from "@/components/home/StatsBar";
 import CtaSection from "@/components/home/CtaSection";
@@ -18,6 +19,7 @@ export default function Home() {
       {/* <Header /> */}
       <Hero />
       <Logos />
+      <Servicesgsap />
       <Services />
       <Mission />
       <StatsBar />
