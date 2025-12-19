@@ -1,86 +1,127 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
-export default function WebDevOverview() {
-  const features = [
-    {
-      title: "Custom Web Development",
-      description:
-        "Tailored websites built with modern technologies, fully responsive, and optimized for performance.",
-    },
-    {
-      title: "E-Commerce Solutions",
-      description:
-        "Launch online stores that drive sales with secure payment integrations and user-friendly UX.",
-    },
-    {
-      title: "CMS & SEO Friendly",
-      description:
-        "Manage content easily and boost your search engine rankings with SEO-optimized websites.",
-    },
-  ];
+gsap.registerPlugin(ScrollTrigger);
+
+export default function OverviewPinnedStrategy() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const rightRefs = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    if (window.innerWidth < 1024) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=120%", // ✅ reduced height
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    // LEFT: slow scale + slight move
+    tl.to(leftRef.current, {
+      x: -40,
+      scale: 0.78,
+      ease: "power2.out",
+      duration: 1,
+    });
+
+    // RIGHT: start appearing from MID scroll
+    tl.fromTo(
+      rightRefs.current,
+      { y: 120, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.25,
+        ease: "power3.out",
+        duration: 1,
+      },
+      ">+=0.4" // ✅ mid-scroll trigger
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6 md:px-12 text-center">
-        {/* Section Heading */}
-        <motion.h2
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-        >
-          Why Choose Devntom for Web Development
-        </motion.h2>
-        <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto mb-12"
-        >
-          We combine creativity, technology, and expertise to deliver websites
-          that engage users, convert visitors into customers, and scale with
-          your business.
-        </motion.p>
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen bg-white overflow-hidden"
+    >
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-screen">
+        {/* LEFT COLUMN */}
+        <div ref={leftRef} className="max-w-xl">
+          <span className="text-sm uppercase tracking-widest text-gray-500">
+            Our Offerings
+          </span>
 
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition cursor-pointer"
-            >
-              <h3 className="text-xl font-semibold text-blue-700 mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </motion.div>
-          ))}
+          <h2 className="mt-6 text-4xl md:text-5xl xl:text-6xl font-light leading-tight text-gray-900">
+            Comprehensive and
+            <span className="block font-normal">
+              winning{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                digital strategy
+              </span>
+            </span>
+          </h2>
+
+          <p className="mt-8 text-lg text-gray-600 leading-relaxed">
+            Devntom is a dedicated web development and digital solutions
+            partner, helping businesses achieve sustainable growth through
+            high-performance websites, scalable eCommerce platforms, and custom
+            web applications.
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-block mt-10 text-sm font-semibold uppercase tracking-wide text-blue-600 hover:underline"
+          >
+            Get in touch →
+          </Link>
         </div>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12"
-        >
-          <a
-            href="https://wa.me/92325XXXXXXX?text=Hi%20Devntom%2C%20I%20want%20to%20build%20my%20website"
-            target="_blank"
-            className="inline-block bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800 transition"
-          >
-            Build Your Website Now
-          </a>
-        </motion.div>
+        {/* RIGHT COLUMN */}
+        <div className="relative pl-12 flex flex-col justify-center space-y-14">
+          {/* Divider – controlled height */}
+          <span className="absolute left-0 top-1/2 -translate-y-1/2 h-[70%] w-px bg-gray-200" />
+
+          {[
+            {
+              title: "A personalized path to success",
+              desc: "We deliver personalized digital experiences through strategic web development, user-centric design, and modern front-end frameworks that improve engagement and long-term growth.",
+            },
+            {
+              title: "Customer demand creation",
+              desc: "By aligning SEO, web design, and conversion optimization, we build websites that rank higher, load faster, and convert qualified traffic into customers.",
+            },
+            {
+              title: "Scalable and future-ready web development",
+              desc: "Using React, Next.js, Node.js, and headless CMS platforms, we engineer scalable web solutions that evolve with your business without rebuilding from scratch.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              ref={(el) => {
+                if (el) rightRefs.current[i] = el;
+              }}
+              className="max-w-md"
+            >
+              <h3 className="text-xl font-medium text-gray-900">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-gray-600 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
