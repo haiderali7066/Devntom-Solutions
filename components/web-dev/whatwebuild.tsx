@@ -126,7 +126,7 @@ export default function WhatWeBuildEnterprise() {
                 {/* Button (always visible) */}
                 <Link
                   href="https://wa.me/923000000000"
-                  className="inline-flex w-fit items-center ml-30 justify-center bg-blue-600 px-8 py-3 text-sm font-semibold text-white rounded-full hover:bg-blue-700 transition"
+                  className="inline-flex w-fit items-center ml-30 justify-center bg-blue-500 px-8 py-3 text-sm font-semibold text-white rounded-full hover:bg-blue-700 transition"
                 >
                   Get in Touch
                 </Link>

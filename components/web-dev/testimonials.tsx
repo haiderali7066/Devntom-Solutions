@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
         {/* Left side: Heading */}
         <div className="md:w-1/2 text-center md:text-center">
           <h2 className="text-4xl font-bold mb-4 font-sans">
-            What Our Clients Say
+            What Our <span className="text-sky-600">Clients</span> Say 
           </h2>
           <p className="text-gray-600 text-lg max-w-md mx-auto md:mx-auto">
             Hear directly from our clients about their experience working with

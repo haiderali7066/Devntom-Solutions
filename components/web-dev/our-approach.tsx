@@ -133,7 +133,7 @@ export default function OurProcess() {
                 style={{ left: x, top: y, transform: "translate(-50%, -50%)" }}
               >
                 <div
-                  className={`w-16 h-16 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold text-xl mb-2
+                  className={`w-16 h-16 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-xl mb-2
                   ${active === step.id ? "shadow-lg scale-110" : ""}`}
                 >
                   {step.id}
@@ -157,7 +157,7 @@ export default function OurProcess() {
               key={step.id}
               className="relative pl-8 border-l border-gray-200"
             >
-              <span className="absolute -left-3 top-1 w-6 h-6 rounded-full bg-teal-500 text-white text-xs flex items-center justify-center">
+              <span className="absolute -left-3 top-1 w-6 h-6 rounded-full bg-sky-500 text-white text-xs flex items-center justify-center">
                 {step.id}
               </span>
               <h4 className="font-semibold text-gray-900">{step.title}</h4>
@@ -169,8 +169,8 @@ export default function OurProcess() {
         {/* CTA */}
         <a
           href="https://wa.me/XXXXXXXXXX"
-          className="mt-20 inline-block rounded-full bg-teal-500 px-10 py-4 
-          text-white font-medium hover:bg-teal-600 transition"
+          className="mt-20 inline-block rounded-full bg-sky-500 px-10 py-4 
+          text-white font-medium hover:bg-sky-600 transition"
         >
           Create Scalable Web Solutions
         </a>

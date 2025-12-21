@@ -105,7 +105,10 @@ export default function Header() {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6">
+            <Button 
+              className="inline-block  rounded-full bg-sky-500 px-8 py-4 text-white font-semibold hover:bg-sky-600 transition"
+
+            >
               Free Consultation
             </Button>
           </div>

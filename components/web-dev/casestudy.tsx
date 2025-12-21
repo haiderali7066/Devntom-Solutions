@@ -1,62 +1,121 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
 
-const caseStudies = [
+import Image from "next/image";
+import Link from "next/link";
+
+const columns = [
   {
-    title: "Boosting E-Commerce Sales by 120%",
-    desc: "We revamped a local online store with modern UX/UI, optimized checkout flow, and integrated secure payments, resulting in a 120% increase in sales within 3 months.",
-    img: "/case-studies/ecommerce-boost.webp",
-    link: "#",
+    offset: "mt-0",
+    items: [
+      {
+        type: "Case Study",
+        title: "US Fashion Resale Platform Scales to 100K Monthly Transactions",
+        image: "/case-studies/fashion.webp",
+        height: "h-[260px]",
+      },
+      {
+        type: "Blog",
+        title: "How Cloud Computing Can Transform Small Businesses",
+        image: "/case-studies/cloud.webp",
+        height: "h-[210px]",
+      },
+    ],
   },
   {
-    title: "Transforming a Corporate Website",
-    desc: "Our team redesigned a corporate website to improve brand visibility, SEO performance, and lead generation. Traffic increased by 80% in 2 months.",
-    img: "/case-studies/corporate-redesign.webp",
-    link: "#",
+    offset: "mt-20",
+    items: [
+      {
+        type: "Blog",
+        title:
+          "Custom Web Application Development: Everything You Need to Know",
+        image: "/case-studies/web-app.webp",
+        height: "h-[230px]",
+      },
+      {
+        type: "Blog",
+        title: "Modern Web Design Trends Shaping Business Growth",
+        image: "/case-studies/design.webp",
+        height: "h-[200px]",
+      },
+      
+    ],
   },
   {
-    title: "Launching a Startup From Scratch",
-    desc: "We helped a startup build their brand identity, website, and online presence, enabling them to attract investors and acquire their first 1000 users in record time.",
-    img: "/case-studies/startup-launch.webp",
-    link: "#",
+    offset: "mt-45",
+    items: [
+      {
+        type: "Case Study",
+        title: "Hospitality AI Platform Reconciles $300M+ OTA Commissions",
+        image: "/case-studies/hospitality.webp",
+        height: "h-[250px]",
+      },
+      
+      
+    ],
   },
 ];
 
-export default function CaseStudies() {
+export default function CaseStudiesSection() {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-4">
-          Insights & Case Studies
-        </h2>
-        <p className="text-center text-gray-600 mb-12">
-          Real stories of how we help businesses grow with creative solutions
-          and measurable results.
-        </p>
+    <section className="relative bg-white py-24 overflow-hidden">
+      <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-r from-white-100/20 to-sky-400/30" />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {caseStudies.map((caseStudy, i) => (
-            <a
-              key={i}
-              href={caseStudy.link}
-              className="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
-            >
-              <div className="relative h-56">
-                <Image
-                  src={caseStudy.img}
-                  alt={caseStudy.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600">
-                  {caseStudy.title}
-                </h3>
-                <p className="text-gray-600">{caseStudy.desc}</p>
-              </div>
-            </a>
+      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+        {/* LEFT */}
+        <div className="sticky top-28">
+          <span className="text-sm tracking-widest uppercase text-sky-500 font-semibold">
+            Featured Insights
+          </span>
+
+          <h2 className="mt-4 text-4xl lg:text-5xl font-bold leading-tight">
+            Stories of our transformations across
+            <br />
+            <span className="text-sky-600">Services & Industries</span>
+          </h2>
+
+          <p className="mt-6 text-lg text-gray-600 max-w-xl">
+            From concept to completion, see how our web development work
+            delivers measurable growth for modern businesses.
+          </p>
+
+          <Link
+            href="/case-studies"
+            className="inline-block mt-8 rounded-full bg-sky-500 px-8 py-4 text-white font-semibold hover:bg-teal-600 transition"
+          >
+            Explore More
+          </Link>
+        </div>
+
+        {/* RIGHT — TRUE STEPPED MASONRY */}
+        <div className="grid grid-cols-3 gap-6 items-start">
+          {columns.map((col, i) => (
+            <div key={i} className={`flex flex-col gap-6 ${col.offset}`}>
+              {col.items.map((card, j) => (
+                <Link
+                  key={j}
+                  href="#"
+                  className={`group relative ${card.height} rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition`}
+                >
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+
+                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition" />
+
+                  <div className="absolute inset-0 p-4 flex flex-col justify-between">
+                    <span className="text-xs uppercase text-white/80 font-semibold">
+                      {card.type}
+                    </span>
+                    <h3 className="text-sm font-semibold text-white leading-snug">
+                      {card.title}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
           ))}
         </div>
       </div>

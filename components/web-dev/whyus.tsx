@@ -1,92 +1,88 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Briefcase, Users, Rocket, ShieldCheck } from "lucide-react";
 
-const reasons = [
-  {
-    label: "Strategy",
-    title: "We Build With Purpose",
-    desc: "Every website starts with understanding your business, audience, and conversion goals — not just visuals.",
-  },
-  {
-    label: "Speed",
-    title: "Performance Is Non-Negotiable",
-    desc: "Optimized assets, clean code, and modern frameworks to deliver fast, reliable experiences.",
-  },
-  {
-    label: "SEO",
-    title: "Search Visibility Built-In",
-    desc: "From site structure to metadata, technical SEO is integrated from the first line of code.",
-  },
-  {
-    label: "Design",
-    title: "UI That Guides Users",
-    desc: "Designs crafted to reduce friction and move users naturally toward action.",
-  },
-  {
-    label: "Scalability",
-    title: "Built for Growth",
-    desc: "Our systems evolve as your business grows — no rebuilds, no limitations.",
-  },
-  {
-    label: "Support",
-    title: "Long-Term Reliability",
-    desc: "We don’t disappear after launch. We refine, optimize, and improve continuously.",
-  },
-];
+gsap.registerPlugin(ScrollTrigger);
 
-export default function WhyChooseUsNew() {
+export default function WhyChooseDevntom() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".why-item",
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.15,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="py-32 bg-[#fafafa] text-black">
-      <div className="max-w-6xl mx-auto px-6">
-
+    <section
+      ref={sectionRef}
+      className="w-full py-28 bg-gradient-to-b from-[#f7f9fc] to-white"
+    >
+      <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
-        <div className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Why Devntom Works Better
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl">
-            Because we focus on results, not just deliverables.
-          </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          We’re Your Trusted{" "}
+          <span className="text-red-500">Enterprise Innovation Partner</span>
+        </h2>
+
+        {/* Divider */}
+        <div className="w-20 h-[2px] bg-red-500 mx-auto my-6" />
+
+        {/* Description */}
+        <p className="max-w-4xl mx-auto text-gray-600 text-base md:text-lg leading-relaxed">
+          With a strong focus on scalability, security, and long-term growth,
+          Devntom helps startups and enterprises build reliable digital
+          solutions. Our engineering-driven approach ensures every product is
+          optimized for performance, compliance, and real-world business impact.
+        </p>
+
+        {/* Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mt-20">
+          <div className="why-item flex flex-col items-center">
+            <Briefcase className="w-10 h-10 text-gray-800 mb-4" />
+            <p className="text-red-500 font-semibold text-lg">10+ Years of</p>
+            <p className="text-gray-800 font-medium">Enterprise IT Expertise</p>
+          </div>
+
+          <div className="why-item flex flex-col items-center">
+            <Users className="w-10 h-10 text-gray-800 mb-4" />
+            <p className="text-red-500 font-semibold text-lg">
+              Trusted by Global
+            </p>
+            <p className="text-gray-800 font-medium">
+              Clients & Growing Brands
+            </p>
+          </div>
+
+          <div className="why-item flex flex-col items-center">
+            <Rocket className="w-10 h-10 text-gray-800 mb-4" />
+            <p className="text-red-500 font-semibold text-lg">500+ Digital</p>
+            <p className="text-gray-800 font-medium">Solutions Delivered</p>
+          </div>
+
+          <div className="why-item flex flex-col items-center">
+            <ShieldCheck className="w-10 h-10 text-gray-800 mb-4" />
+            <p className="text-red-500 font-semibold text-lg">Security-First</p>
+            <p className="text-gray-800 font-medium">
+              Best Practices & Compliance
+            </p>
+          </div>
         </div>
-
-        {/* Rows */}
-        <div className="divide-y divide-gray-200">
-          {reasons.map((item, i) => (
-            <div
-              key={i}
-              className="group py-10 grid md:grid-cols-12 gap-6 items-center transition"
-            >
-              {/* Label */}
-              <div className="md:col-span-3">
-                <span className="text-5xl font-bold text-blue-600 group-hover:text-black transition">
-                  {item.label}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="md:col-span-9">
-                <h3 className="text-2xl font-semibold">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mt-3 max-w-3xl opacity-0 group-hover:opacity-100 transition duration-300">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-20">
-          <Link
-            href="https://wa.me/your-number"
-            className="inline-block border-b-2 border-black pb-2 text-sm tracking-wide hover:opacity-60 transition"
-          >
-            Start Your Web Project →
-          </Link>
-        </div>
-
       </div>
     </section>
   );

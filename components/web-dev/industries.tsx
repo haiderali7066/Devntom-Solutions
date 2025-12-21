@@ -32,7 +32,7 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section className="relative">
+    <section className="relative py-20">
       {/* Background */}
       <div className="relative h-[420px] w-full">
         <Image
@@ -44,7 +44,7 @@ export default function IndustriesSection() {
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-5xl mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
-          <span className="text-green-400 text-sm tracking-widest mb-4">
+          <span className="text-sky-500 text-sm tracking-widest mb-4">
             INDUSTRIES WE SERVE
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -67,7 +67,7 @@ export default function IndustriesSection() {
             >
               <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
               <p className="text-gray-600 mb-6">{item.desc}</p>
-              <div className="flex items-center text-green-500 font-medium group-hover:gap-2 transition-all">
+              <div className="flex items-center text-sky-500 font-medium group-hover:gap-2 transition-all">
                 Explore
                 <ArrowRight size={18} />
               </div>

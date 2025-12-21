@@ -34,10 +34,11 @@ export default function WebDevHero() {
             <Link
               href="https://wa.me/923256036838?text=Hi%20Devntom%20Soluotions%2C%20I%20want%20to%20build%20my%20website"
               target="_blank"
-              className="inline-block  text-white bg-blue-700 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition"
+              className="inline-block mt-8 rounded-full bg-sky-500 px-8 py-4 text-white font-semibold hover:bg-sky-600 transition"
             >
               Build Your Website Now
             </Link>
+            
           </motion.div>
         </div>
 
