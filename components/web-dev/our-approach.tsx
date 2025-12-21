@@ -62,7 +62,7 @@ export default function OurProcess() {
         </h2>
 
         {/* DESKTOP HORIZONTAL OVAL TIMELINE */}
-        <div className="relative mt-24 h-[300px] hidden md:block">
+        <div className="relative mt-24 h-[350px] hidden md:block ">
           <svg
             viewBox="0 0 1000 300"
             className="absolute inset-0 w-full h-full"
@@ -79,14 +79,12 @@ export default function OurProcess() {
                 Q50 250 50 150 
                 Q50 50 100 50
               "
-              stroke={active ? "#14b8a6" : "#0f172a"}
-              strokeWidth="12"
+              stroke={active ? "#0ea5e9" : "#0ea5e9"}
+              strokeWidth="30"
               strokeLinecap="round"
               fill="none"
               style={{
-                filter: active
-                  ? "drop-shadow(0 0 8px rgba(20,184,166,0.6))"
-                  : "none",
+                filter: active ? "drop-shadow(0 0 8px #0ea5e9)" : "none",
               }}
             />
           </svg>

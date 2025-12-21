@@ -6,7 +6,15 @@ import Link from "next/link";
 export default function WebDevHero() {
   return (
     <section className="relative w-full   overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 py-24 md:py-32 flex flex-col-reverse md:flex-row items-center justify-between">
+      <div className="container mx-auto px-6 md:px-12 py-24 md:py-32 flex flex-col-reverse md:flex-row items-center justify-between ">
+        <video
+          src="/videos/texture.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        ></video>
         {/* Left Content */}
         <div className="w-full md:w-1/2 space-y-6">
           <motion.h1
@@ -38,7 +46,6 @@ export default function WebDevHero() {
             >
               Build Your Website Now
             </Link>
-            
           </motion.div>
         </div>
 
