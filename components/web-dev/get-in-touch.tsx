@@ -27,7 +27,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="bg-[#e6e6e6] py-20 text-black">
+    <section className="bg-sky-600 py-20 text-black">
       <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* LEFT FORM */}
         <form onSubmit={handleSubmit} className="space-y-6">

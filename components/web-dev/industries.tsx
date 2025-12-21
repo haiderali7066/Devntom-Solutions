@@ -5,11 +5,11 @@ import { ArrowRight } from "lucide-react";
 
 const industries = [
   {
-    title: "Retail & E-Commerce",
+    title: "E-Commerce",
     desc: "High-conversion stores, inventory systems, and seamless digital shopping experiences.",
   },
   {
-    title: "FinTech & Banking",
+    title: "AI & Tech",
     desc: "Secure, scalable platforms for payments, dashboards, and financial automation.",
   },
   {
@@ -35,14 +35,22 @@ export default function IndustriesSection() {
     <section className="relative py-20">
       {/* Background */}
       <div className="relative h-[420px] w-full">
-        <Image
-          src="/images/industries-bg.webp" // abstract / space / tech image
+        <video
+          src="/videos/city6.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover "
+        ></video>
+        {/* <Image
+          src="/web-dev/city.jpg" // abstract / space / tech image
           alt="Industries background"
           fill
           className="object-cover"
           priority
-        />
-        <div className="absolute inset-0 bg-black/60" />
+        /> */}
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative z-10 max-w-5xl mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
           <span className="text-sky-500 text-sm tracking-widest mb-4">
             INDUSTRIES WE SERVE

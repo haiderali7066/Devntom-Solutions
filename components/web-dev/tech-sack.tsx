@@ -41,7 +41,7 @@ export default function TechStackBar() {
         {/* Title */}
         <div className="mb-10">
           <h2 className="text-3xl font-bold text-gray-900">
-            Technologies We Use
+            Top Technologies We Use
           </h2>
         </div>
 

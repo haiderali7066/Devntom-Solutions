@@ -72,7 +72,7 @@ export default function Header() {
               key={i}
               href={item.href}
               onClick={() => setOpen(null)}
-              className="block px-5 py-3 hover:bg-blue-600 hover:text-white transition"
+              className="block px-5 py-3 hover:bg-sky-500 hover:text-white transition"
             >
               {item.label}
             </Link>
@@ -87,7 +87,7 @@ export default function Header() {
       <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur border-b">
         <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="font-bold text-2xl text-blue-600">
+          <Link href="/" className="font-bold text-2xl text-sky-500">
             Devntom Solutions
           </Link>
 
