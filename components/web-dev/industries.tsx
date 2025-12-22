@@ -36,7 +36,7 @@ export default function IndustriesSection() {
       {/* Background */}
       <div className="relative h-[420px] w-full">
         <video
-          src="/videos/city6.mp4"
+          src="/videos/v4.mp4"
           autoPlay
           muted
           loop

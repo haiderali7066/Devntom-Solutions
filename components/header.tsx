@@ -105,12 +105,13 @@ export default function Header() {
           </div>
 
           <div className="hidden md:block">
-            <Button 
-              className="inline-block  rounded-full bg-sky-500 px-8 py-4 text-white font-semibold hover:bg-sky-600 transition"
-
+            <Link
+              href="https://wa.me/923256036838?text=Hi%20Devntom%20Soluotions%2C%20I%20want%20to%20build%20my%20website"
+              target="_blank"
+              className="inline-block  rounded-full bg-sky-500 px-5 py-3 text-white font-semibold hover:bg-sky-600 transition"
             >
               Free Consultation
-            </Button>
+            </Link>
           </div>
 
           {/* Mobile Button */}

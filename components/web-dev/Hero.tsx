@@ -18,7 +18,7 @@ export default function WebDevHero() {
         {/* Left Content */}
         <div className="w-full md:w-1/2 space-y-6">
           <motion.h1
-            initial={{ y: -50, opacity: 0 }}
+            initial={{ y: -50, opacity: 100 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold leading-tight"

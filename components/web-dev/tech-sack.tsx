@@ -36,7 +36,7 @@ const techLogos = [
 
 export default function TechStackBar() {
   return (
-    <section className="py-16 border-y border-gray-200 bg-white overflow-hidden">
+    <section className="py-16  bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
         <div className="mb-10">

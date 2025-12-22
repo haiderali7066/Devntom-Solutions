@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0047AB] text-white pt-20">
+    <footer className="bg-sky-600 text-white pt-20">
       {/* TOP CONTACT BOXES */}
 
       {/* MIDDLE CONTENT */}
