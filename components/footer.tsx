@@ -8,16 +8,78 @@ const Footer = () => {
       {/* MIDDLE CONTENT */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-15 pb-16">
         <div className="grid md:grid-cols-4 gap-14">
-          {/* Logo */}
+
+          {/* Logo + Footer Text + Socials */}
           <div>
+            {/* Logo */}
             <div className="flex items-center gap-2">
-              <img src="/footerlogo.svg" alt="Devntom" className="w-10 h-10" />
+              <img src="/letter-d.png" alt="Devntom" className="w-10 h-10" />
               <span className="text-2xl font-bold tracking-wide">Devntom™</span>
             </div>
 
+            {/* Description */}
             <p className="text-white/85 mt-6 text-base leading-relaxed max-w-xs">
               Helping businesses grow online with tailored digital solutions.
             </p>
+
+            {/* Social Icons with Brand Colors */}
+            <div className="flex items-center justify-end gap-4 ">
+              {/* Instagram */}
+              <a
+                href="https://instagram.com/devntom.solutions"
+                target="_blank"
+                className="hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg"
+                  alt="Instagram"
+                  className="w-6 h-6"
+                  style={{ fill: "url(#instagram-gradient)" }}
+                />
+              </a>
+              {/* Facebook */}
+              <a
+                href="https://facebook.com/devntomsolutions"
+                target="_blank"
+                className="hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg"
+                  alt="Facebook"
+                  className="w-6 h-6"
+                  style={{ fill: "#1877F2" }}
+                />
+              </a>
+
+              
+
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com/company/devntomsolutions"
+                target="_blank"
+                className="hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+                  alt="LinkedIn"
+                  className="w-6 h-6"
+                  style={{ fill: "#0A66C2" }}
+                />
+              </a>
+              {/* Twitter */}
+              <a
+                href="https://twitter.com/devntomsolutions"
+                target="_blank"
+                className="hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg"
+                  alt="Twitter"
+                  className="w-6 h-6"
+                  style={{ fill: "#1DA1F2" }}
+                />
+              </a>
+            </div>
           </div>
 
           {/* Services */}
