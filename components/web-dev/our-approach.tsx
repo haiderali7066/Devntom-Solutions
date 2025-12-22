@@ -149,7 +149,7 @@ export default function OurProcess() {
         </div>
 
         {/* MOBILE STACKED TIMELINE */}
-        <div className="md:hidden mt-16 space-y-6 text-left">
+        <div className="md:hidden mt-16 ml-5 space-y-6 text-left">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -158,7 +158,7 @@ export default function OurProcess() {
               <span className="absolute -left-3 top-1 w-6 h-6 rounded-full bg-sky-500 text-white text-xs flex items-center justify-center">
                 {step.id}
               </span>
-              <h4 className="font-semibold text-gray-900">{step.title}</h4>
+              <h4 className="font-semibold text-xl text-sky-600">{step.title}</h4>
               <p className="text-sm text-gray-600 mt-1">{step.desc}</p>
             </div>
           ))}

@@ -52,7 +52,7 @@ export default function WhyChooseDevntom() {
         </p>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mt-20">
+        <div className="grid grid-cols-1 grid-cols-2 lg:grid-cols-4 gap-12 mt-20">
           <div className="why-item flex flex-col items-center">
             <Briefcase className="w-10 h-10 text-gray-800 mb-4" />
             <p className="text-sky-500 font-semibold text-lg">10+ Years of</p>

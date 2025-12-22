@@ -87,7 +87,7 @@ export default function CaseStudiesSection() {
         </div>
 
         {/* RIGHT — TRUE STEPPED MASONRY */}
-        <div className="grid grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-3 gap-6 items-start mt-20 md:mt-0">
           {columns.map((col, i) => (
             <div key={i} className={`flex flex-col gap-6 ${col.offset}`}>
               {col.items.map((card, j) => (

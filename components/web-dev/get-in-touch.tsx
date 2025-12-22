@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function GetInTouch() {
   return (
-    <section className="relative flex items-center justify-center min-h-[85vh] bg-sky-50 overflow-hidden">
+    <section className="relative flex items-center justify-center min-h-[65vh] bg-sky-50 overflow-hidden">
       {/* soft background ring */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[520px] h-[520px] rounded-full bg-white/5 blur-3xl" />

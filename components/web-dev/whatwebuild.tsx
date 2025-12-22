@@ -94,7 +94,7 @@ export default function WhatWeBuildEnterprise() {
         </div>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:px-10">
           {services.map((service, i) => (
             <div
               key={i}
@@ -126,7 +126,7 @@ export default function WhatWeBuildEnterprise() {
                 {/* Button (always visible) */}
                 <Link
                   href="https://wa.me/923000000000"
-                  className="inline-flex w-fit items-center ml-30 justify-center bg-sky-500 px-8 py-3 text-sm font-semibold text-white rounded-full hover:bg-blue-700 transition"
+                  className="inline-flex w-fit items-center justify-center bg-sky-500 px-8 py-3 text-sm font-semibold text-white rounded-full hover:bg-blue-700 transition ml-28 mt-4"
                 >
                   Get in Touch
                 </Link>

@@ -6,7 +6,8 @@ import Ourapproach from "@/components/web-dev/our-approach";
 import Industries from "@/components/web-dev/industries";
 import TechStack from "@/components/web-dev/tech-sack";
 // import Features from "@/components/web-dev/features";
-import Testimonials from "@/components/web-dev/testimonials";
+// import Testimonials from "@/components/web-dev/testimonials";
+import Testimonials2 from "@/components/web-dev/testiminials2";
 import Faq from "@/components/web-dev/faq";
 import Awards from "@/components/web-dev/awards";
 import Casestudy from "@/components/web-dev/casestudy";
@@ -23,7 +24,8 @@ export default function WebDev() {
       <TechStack></TechStack>
       <Industries></Industries>
       {/* <Features></Features> */}
-      <Testimonials></Testimonials>
+      {/* <Testimonials></Testimonials> */}
+      <Testimonials2></Testimonials2>
       <Casestudy></Casestudy>
       <Awards></Awards>
       <Faq></Faq>

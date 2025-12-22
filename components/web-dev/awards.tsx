@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 const awardsTop = [
@@ -44,15 +46,15 @@ export default function AwardsExact() {
         </div>
 
         {/* MAIN GRID CONTAINER */}
-        <div className="border border-gray-200">
-          {/* TOP ROW – 6 COLUMNS */}
-          <div className="grid grid-cols-6">
+        <div className="border border-gray-200 rounded-xl overflow-hidden">
+          {/* TOP ROW */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 border-b border-gray-200">
             {awardsTop.map((item, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center text-center px-6 py-12 border-r border-gray-200 last:border-r-0"
+                className="flex flex-col items-center text-center px-4 py-8 border-r border-gray-200 last:border-r-0"
               >
-                <div className="relative w-20 h-20 mb-6">
+                <div className="relative w-20 h-20 mb-4 sm:mb-6">
                   <Image
                     src={item.img}
                     alt=""
@@ -60,23 +62,19 @@ export default function AwardsExact() {
                     className="object-contain"
                   />
                 </div>
-                <p className="text-sm text-gray-800 leading-relaxed">
+                <p className="text-sm sm:text-xs lg:text-sm text-gray-800 leading-relaxed">
                   {item.text}
                 </p>
               </div>
             ))}
           </div>
 
-          
-
-          {/* BOTTOM ROW – CENTERED 4 COLUMNS */}
-          <div className="grid grid-cols-6 border-t border-gray-200">
-            {/* EMPTY CELLS FOR CENTERING */}
-            <div className="border-r border-gray-200" />
+          {/* BOTTOM ROW */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-gray-200">
             {awardsBottom.map((item, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center py-12 border-r border-gray-200"
+                className="flex flex-col items-center py-8 border-r border-gray-200 last:border-r-0"
               >
                 <div className="relative w-20 h-20 mb-4">
                   <Image
@@ -86,10 +84,11 @@ export default function AwardsExact() {
                     className="object-contain"
                   />
                 </div>
-                <p className="text-sm font-medium text-gray-900">{item.text}</p>
+                <p className="text-sm font-medium text-gray-900 text-center">
+                  {item.text}
+                </p>
               </div>
             ))}
-            <div />
           </div>
         </div>
       </div>

@@ -12,18 +12,18 @@ const Footer = () => {
           {/* Logo + Footer Text + Socials */}
           <div>
             {/* Logo */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <img src="/letter-d.png" alt="Devntom" className="w-10 h-10" />
               <span className="text-2xl font-bold tracking-wide">Devntom™</span>
             </div>
 
             {/* Description */}
-            <p className="text-white/85 mt-6 text-base leading-relaxed max-w-xs">
+            <p className="text-white/85 mt-6 text-center leading-relaxed max-w-xs mx-auto">
               Helping businesses grow online with tailored digital solutions.
             </p>
 
             {/* Social Icons with Brand Colors */}
-            <div className="flex items-center justify-end gap-4 ">
+            <div className="flex items-center justify-center gap-5 mt-5 ">
               {/* Instagram */}
               <a
                 href="https://instagram.com/devntom.solutions"

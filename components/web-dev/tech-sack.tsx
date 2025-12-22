@@ -36,28 +36,37 @@ const techLogos = [
 
 export default function TechStackBar() {
   return (
-    <section className="py-16  bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-14 sm:py-16 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Title */}
-        <div className="mb-10">
-          <h2 className="text-3xl font-bold text-gray-900">
+        <div className="mb-8 sm:mb-10 text-center sm:text-left">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900">
             Top Technologies We Use
           </h2>
         </div>
 
         {/* Logo Bar */}
-        <div className="flex items-center justify-center gap-14 overflow-x-auto scrollbar-hide">
+        <div
+          className="
+          flex items-center
+          gap-6 sm:gap-14
+          overflow-x-auto sm:overflow-visible
+          justify-start sm:justify-center
+          scrollbar-hide
+          snap-x snap-mandatory sm:snap-none
+        "
+        >
           {techLogos.map((tech, i) => (
             <div
               key={i}
-              className="flex-shrink-0  hover:grayscale transition"
+              className="flex-shrink-0 snap-center px-2  hover:grayscale transition"
             >
               <Image
                 src={tech.src}
                 alt={tech.name}
-                width={100}
-                height={80}
-                className="object-contain"
+                width={90}
+                height={60}
+                className="object-contain w-[70px] sm:w-[90px]"
               />
             </div>
           ))}
