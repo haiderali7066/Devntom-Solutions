@@ -41,57 +41,64 @@ export default function ServicesScroll() {
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=160%",
-        scrub: true,
-        pin: true,
-      },
-    });
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=150%",
+          scrub: true,
+          pin: true,
+        },
+      });
 
-    // Title animation
-    tl.to(titleRef.current, {
-      x: -260,
-      scale: 0.65,
-      opacity: 0.4,
-      ease: "power2.out",
-    });
+      /* Title shift */
+      tl.to(titleRef.current, {
+        x: -260,
+        scale: 0.65,
+        opacity: 0.4,
+        ease: "power2.out",
+      });
 
-    // Corner images move out
-    tl.to(
-      imagesRef.current,
-      {
-        x: (i) => (i % 2 === 0 ? -300 : 300),
-        y: (i) => (i < 2 ? -220 : 220),
-        scale: 0.5,
-        opacity: 0,
-        rotate: 6,
-        stagger: 0.06,
-        ease: "power3.out",
-      },
-      "<"
-    );
+      /* Corner images exit */
+      tl.to(
+        imagesRef.current,
+        {
+          x: (i) => (i % 2 === 0 ? -300 : 300),
+          y: (i) => (i < 2 ? -220 : 220),
+          scale: 0.5,
+          opacity: 0,
+          rotate: 6,
+          stagger: 0.06,
+          ease: "power3.out",
+        },
+        "<"
+      );
 
-    // Services cards stagger reveal
-    tl.fromTo(
-      cardsRef.current,
-      { y: 120, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-      },
-      "<+0.2"
-    );
+      /* RIGHT CONTENT — FROM BOTTOM */
+      tl.fromTo(
+        cardsRef.current,
+        {
+          y: () => window.innerHeight,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.18,
+          ease: "power4.out",
+        },
+        "<+0.3"
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen bg-[#f5f5f5] overflow-hidden"
+      className="relative h-screen bg-[#f5f5f5] overflow-hidden "
     >
       {/* Corner Images */}
       {["/img1.webp", "/img2.webp", "/img3.webp", "/img4.webp"].map(
@@ -119,21 +126,21 @@ export default function ServicesScroll() {
       <div className="absolute inset-0 flex items-center justify-center">
         <h2
           ref={titleRef}
-          className="text-6xl md:text-7xl font-bold tracking-tight text-black"
+          className="text-6xl md:text-7xl font-bold tracking-tight text-sky-500"
         >
           Our Services
         </h2>
       </div>
 
       {/* Services Content */}
-      <div className="absolute right-20 top-1/2 -translate-y-1/2 w-[420px] space-y-6">
+      <div className="absolute right-20 top-1/2 mt-10 -translate-y-1/2 w-[520px] space-y-6">
         {services.map((service, i) => (
           <div
             key={i}
             ref={(el) => {
               if (el) cardsRef.current[i] = el;
             }}
-            className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-lg opacity-0"
+            className="bg-white/70 backdrop-blur-md rounded p-6 shadow-lg opacity-0 will-change-transform"
           >
             <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">

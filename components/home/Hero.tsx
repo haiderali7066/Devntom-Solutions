@@ -1,96 +1,99 @@
-import { Button } from "@/components/ui/button";
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-export default function Hero() {
+export default function HeroVideoPremium() {
+  const logos = [
+    "/logos/company1.svg",
+    "/logos/company2.svg",
+    "/logos/company3.svg",
+    "/logos/company4.svg",
+    "/logos/company5.svg",
+    "/logos/company6.svg",
+  ];
   return (
-    <section className="relative w-full lg:h-[75vh] overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 bg-fixed">
-      {/* Background images / shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Left top abstract shape */}
-        <div className="absolute top-20 -left-96 w-96 h-96 opacity-30">
-          <svg className="w-full h-full" viewBox="0 0 400 400">
-            <path
-              d="M 0 100 L 400 0"
-              stroke="rgba(59, 130, 246, 0.6)"
-              strokeWidth="3"
-              fill="none"
-            />
-            <path
-              d="M 0 150 L 400 50"
-              stroke="rgba(59, 130, 246, 0.4)"
-              strokeWidth="2"
-              fill="none"
-            />
-            <path
-              d="M 0 200 L 400 100"
-              stroke="rgba(59, 130, 246, 0.2)"
-              strokeWidth="2"
-              fill="none"
-            />
-          </svg>
-        </div>
+    <section className="relative min-h-screen w-full overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/v4.mp4" type="video/mp4" />
+      </video>
 
-        {/* Bottom right abstract shape */}
-        <div className="absolute bottom-0 right-0 w-96 h-96 opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 400 400">
-            <path
-              d="M 0 0 Q 200 100 400 0 L 400 400 L 0 400 Z"
-              fill="url(#grad1)"
-            />
-            <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="rgba(59, 130, 246, 0.3)" />
-                <stop offset="100%" stopColor="rgba(59, 130, 246, 0.1)" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
 
-        {/* Optional subtle shapes */}
-        <div className="absolute top-1/3 left-1/4 w-72 h-72 opacity-10 rounded-lg border border-blue-400 transform -rotate-12"></div>
-        <div className="absolute top-1/2 right-1/3 w-96 h-96 opacity-5 rounded-full border border-cyan-300"></div>
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 h-screen flex items-center">
+        <div className="max-w-2xl">
+          <span className="inline-block mb-4 text-sm tracking-widest text-sky-400 uppercase">
+            Devntom Solutions
+          </span>
 
-        {/* Robot image as background */}
-        <div className="absolute inset-0">
-          {/* <Image
-              src="/3d-robot-ai-artificial-intelligence-laptop-screen-.jpg"
-              alt="AI Robot background"
-              fill
-              className="object-cover opacity-10 pointer-events-none"
-              priority
-            /> */}
-          <video
-            src="/videos/v7.webm"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-          ></video>
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            Building Digital Products
+            <br />
+            That Drive Real Growth
+          </h1>
+
+          <p className="mt-6 text-lg text-white/75">
+            We design and develop fast, scalable, and SEO-optimized websites for
+            modern businesses.
+          </p>
+
+          <div className="mt-10 flex gap-4">
+            <a
+              href="#contact"
+              className="px-8 py-4 bg-sky-500 text-white font-semibold hover:bg-sky-600 transition"
+            >
+              Start a Project
+            </a>
+
+            <a
+              href="#work"
+              className="px-8 py-4 border border-white/20 text-white hover:bg-white/10 transition"
+            >
+              View Case Studies
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Text Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-20 md:py-32">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-12">
-          <div className="text-white space-y-6 lg:w-full lg:pl-12">
-            <div className="flex items-center gap-3">
-              <div className="w-1 h-6 bg-blue-400"></div>
-              <span className="text-blue-300 font-medium">Since 2023</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-balance">
-              Empowering Businesses With Innovative Digital Solutions
-            </h1>
-            <p className="text-lg text-gray-300 leading-relaxed max-w-7/12">
-              Devntom Solutions specializes in AI-powered solutions, web
-              development, and digital transformation to accelerate your online
-              growth and business success.
-            </p>
-            <div className="pt-4">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6 rounded-lg font-semibold">
-                Get Started
-              </Button>
-            </div>
-          </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+        Scroll ↓
+      </div>
+      <div className="absolute bottom-0 w-full bg-black/60 backdrop-blur-md py-6 overflow-hidden">
+        <p className="text-center text-sm text-white/60 mb-4">
+          Trusted by fast-growing companies worldwide
+        </p>
+
+        <div className="relative w-full overflow-hidden">
+          <motion.div
+            className="flex gap-16 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 25,
+            }}
+          >
+            {[...logos, ...logos].map((logo, i) => (
+              <div key={i} className="flex items-center justify-center">
+                <Image
+                  src={logo}
+                  alt="Trusted company"
+                  width={120}
+                  height={40}
+                  className="opacity-70 hover:opacity-100 transition"
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

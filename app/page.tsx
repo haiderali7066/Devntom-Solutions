@@ -1,35 +1,30 @@
-// import Header from "@/components/header";
-// import Footer from "@/components/footer";
 
 import Hero from "@/components/home/Hero";
-import Logos from "@/components/home/Logos";
-import Services from "@/components/home/Services";
-import Serviceslis from "@/components/home/Sevices-list";
 import Servicesgsap from "@/components/home/Services-gsap";
-import Mission from "@/components/home/Mission";
-import StatsBar from "@/components/home/StatsBar";
+import Overview from "@/components/home/overview";
+import Whyus from "@/components/home/WhyUs";
+import IndustriesWeServe2 from "@/components/home/industries2";
 import CtaSection from "@/components/home/CtaSection";
-import HowItWorks from "@/components/home/HowItWorks";
-import WhyUs from "@/components/home/WhyUs";
-import PortfolioSection from "@/components/home/PortfolioSection";
+import Casestudy from "@/components/web-dev/casestudy";
+import Testimonials2 from "@/components/web-dev/testiminials2";
+import Faq from "@/components/home/Faq";
+
 
 
 export default function Home() {
   return (
     <main className="w-full">
-      {/* <Header /> */}
+     
+
       <Hero />
-      <Logos />
+      <Overview />
+      <IndustriesWeServe2 />
       <Servicesgsap />
-      <Services />
-      <Serviceslis />
-      <Mission />
-      <StatsBar />
+      <Whyus />
+      <Casestudy />
+      <Testimonials2 />
       <CtaSection />
-      <PortfolioSection />;
-      <HowItWorks />
-      <WhyUs />
-      {/* <Footer /> */}
+      <Faq />
     </main>
   );
 }

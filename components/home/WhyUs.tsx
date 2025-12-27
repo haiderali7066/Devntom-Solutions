@@ -1,100 +1,110 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function WhyUs() {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ImpactStats() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const numbersRef = useRef<HTMLSpanElement[]>([]);
+
+  useEffect(() => {
+    numbersRef.current.forEach((el) => {
+      const endValue = Number(el.dataset.value);
+
+      gsap.fromTo(
+        el,
+        { innerText: 0 },
+        {
+          innerText: endValue,
+          duration: 2,
+          ease: "power3.out",
+          snap: { innerText: 1 },
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            once: true,
+          },
+          onUpdate: function () {
+            el.innerText = Math.floor(Number(el.innerText)).toString();
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      className="w-full px-6 md:px-16 lg:px-28 py-20 grid md:grid-cols-2 gap-12 items-center bg-white"
-    >
-      {/* LEFT: Image + Testimonial Card */}
-      <div className="relative w-full h-full min-h-[400px] md:min-h-[600px]">
-        <Image
-          src="/support-girl.jpg"
-          alt="Customer Support"
-          fill
-          className="rounded-xl shadow-lg object-cover scale-x-[-1]"
-          priority
-        />
+    <section ref={sectionRef} className="relative bg-sky-500 overflow-hidden">
+      {/* diagonal overlay */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-black/10 to-white/10 pointer-events-none" />
 
-        {/* Floating Testimonial */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="absolute bottom-6 left-6 bg-blue-600 text-white shadow-xl border-l-4 border-orange-500 p-6 md:p-8 rounded-2xl max-w-md"
-        >
-          <p className="text-sm md:text-base">
-            Devntom transformed our business completely. Their team is
-            proactive, skilled, and always ready to assist. Now we focus on
-            scaling while they manage everything smoothly.
-          </p>
-          <p className="mt-3 font-semibold">Client – Devntom Solutions</p>
-        </motion.div>
-      </div>
-
-      {/* RIGHT CONTENT */}
-      <div className="lg:pl-8 pt-16 lg:pt-0">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-1 h-6 bg-blue-600"></div>
-          <p className="text-blue-600 font-semibold text-sm md:text-base">
-            Why Choose Devntom?
-          </p>
-        </div>
-
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-          Your Growth, Our Expertise
+      <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
+        {/* Heading */}
+        <h2 className="text-white text-center text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight max-w-4xl mx-auto">
+          From Startups to Enterprises,
+          <br className="hidden sm:block" />
+          <span className="font-bold">
+            {" "}
+            Delivering High-Impact Digital Solutions
+          </span>
         </h2>
 
-        <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-          At Devntom, we combine creativity, technology, and strategic insight
-          to deliver solutions that truly help your business grow.
-        </p>
-
-        {/* Comparison Circles */}
-        <div className="flex gap-10 mt-10">
-          {/* Traditional */}
-          <div className="text-center">
-            <div className="relative w-20 h-20 mx-auto">
-              <div className="absolute inset-0 rounded-full border-[6px] border-gray-300"></div>
-              <div className="absolute inset-0 rounded-full border-[6px] border-orange-500 border-r-transparent rotate-45"></div>
-              <div className="absolute inset-0 flex items-center justify-center font-bold text-gray-700">
-                35%
+        {/* Stats */}
+        <div className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-6">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="border border-white/40 rounded-2xl p-7 md:p-8 text-center backdrop-blur-sm hover:bg-white/5 transition"
+            >
+              <div className="text-white text-4xl md:text-5xl font-bold tracking-tight">
+                <span
+                  ref={(el) => {
+                    if (el) numbersRef.current[index] = el;
+                  }}
+                  data-value={item.value}
+                >
+                  0
+                </span>
+                {item.suffix}
               </div>
-            </div>
-            <p className="font-semibold mt-3">Traditional Approach</p>
-            <p className="text-gray-600 text-sm mt-1">
-              Expensive, slow, and inconsistent.
-            </p>
-          </div>
 
-          {/* Devntom Advantage */}
-          <div className="text-center">
-            <div className="relative w-20 h-20 mx-auto">
-              <div className="absolute inset-0 rounded-full border-[6px] border-orange-500"></div>
-              <div className="absolute inset-0 flex items-center justify-center font-bold text-gray-700">
-                100%
-              </div>
+              <p className="mt-3 text-white/80 text-sm md:text-[15px] leading-snug">
+                {item.label}
+              </p>
             </div>
-            <p className="font-semibold mt-3">Devntom Advantage</p>
-            <p className="text-gray-600 text-sm mt-1">
-              Faster, smarter & cost-effective from day one.
-            </p>
-          </div>
+          ))}
         </div>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="mt-10 bg-blue-600 text-white px-6 py-3 rounded-2xl font-semibold"
-        >
-          Free Consultation
-        </motion.button>
       </div>
-    </motion.section>
+    </section>
   );
 }
+
+const stats = [
+  {
+    value: 10,
+    suffix: "+",
+    label: "Years of Digital Excellence",
+  },
+  {
+    value: 5,
+    suffix: "%",
+    label: "Top Global Engineering Talent",
+  },
+  {
+    value: 120,
+    suffix: "+",
+    label: "Projects Delivered Worldwide",
+  },
+  {
+    value: 50,
+    suffix: "+",
+    label: "Clients Across Industries",
+  },
+  {
+    value: 100,
+    suffix: "K+",
+    label: "Development & Consulting Hours",
+  },
+];

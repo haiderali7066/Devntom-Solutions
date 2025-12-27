@@ -1,5 +1,11 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const services = [
   { name: "Custom Web Development", color: "bg-yellow-400" },
   { name: "Cloud Solutions", color: "bg-black" },
@@ -14,8 +20,33 @@ const services = [
 ];
 
 export default function FeaturesTimeline() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const itemsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%", // when section enters viewport
+        end: "bottom 60%", // optional
+      },
+    });
+
+    tl.fromTo(
+      itemsRef.current,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power3.out",
+      }
+    );
+  }, []);
+
   return (
-    <section className="py-28 bg-white">
+    <section ref={sectionRef} className="py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
         {/* LEFT CONTENT */}
         <div>
@@ -54,7 +85,13 @@ export default function FeaturesTimeline() {
           {/* Services */}
           <div className="flex flex-col gap-8">
             {services.map((service, i) => (
-              <div key={i} className="flex items-center gap-6">
+              <div
+                key={i}
+                ref={(el) => {
+                  if (el) itemsRef.current[i] = el;
+                }}
+                className="flex items-center gap-6 opacity-0"
+              >
                 <span className={`w-3 h-3 rounded-full ${service.color}`} />
                 <p className="text-gray-900 font-medium">{service.name}</p>
               </div>
