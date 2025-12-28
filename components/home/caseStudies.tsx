@@ -1,35 +1,59 @@
-export default function CaseStudies() {
-  const projects = [
-    { title: "E-commerce Web App", img: "/projects/ecommerce.png" },
-    { title: "Mobile App Launch", img: "/projects/mobile.png" },
-    { title: "Marketing Campaign", img: "/projects/marketing.png" },
-    { title: "Custom Software", img: "/projects/software.png" },
-  ];
+"use client";
 
+import Image from "next/image";
+
+const insights = [
+  { img: "/insights/insight1.jpg", alt: "Insight 1" },
+  { img: "/insights/insight2.jpg", alt: "Insight 2" },
+  { img: "/insights/insight3.jpg", alt: "Insight 3" },
+  { img: "/insights/insight4.jpg", alt: "Insight 4" },
+  { img: "/insights/insight5.jpg", alt: "Insight 5" },
+];
+
+export default function FeaturedInsights() {
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-16 text-center">Case Studies</h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          {projects.map((p, i) => (
+    <section className="relative w-full py-24 bg-sky-500 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-12">
+        {/* Left Side */}
+        <div className="lg:w-1/3 flex flex-col gap-6 text-white">
+          <h2 className="text-5xl font-bold leading-tight">
+            Featured Insights
+          </h2>
+          <p className="text-lg leading-relaxed">
+            Discover our latest insights and expert tips that drive business
+            success. From case studies to trend analyses, stay informed and
+            inspired. Learn how industry leaders leverage technology and
+            strategy to achieve remarkable growth, optimize operations, and
+            deliver unparalleled customer experiences.
+          </p>
+          <button className="mt-4 px-6 py-3 bg-white text-sky-900 font-semibold rounded-full shadow-lg hover:bg-gray-200 transition">
+            Explore More
+          </button>
+        </div>
+
+        {/* Right Side Masonry */}
+        <div className="lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-4">
+          {insights.map((item, index) => (
             <div
-              key={i}
-              className="relative group h-[320px] rounded-lg overflow-hidden shadow-lg"
+              key={index}
+              className={`relative w-full rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105
+                ${index % 3 === 0 ? "row-span-2" : "row-span-1"}
+              `}
             >
-              <img
-                src={p.img}
-                alt={p.title}
-                className="w-full h-full object-cover"
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
-                <span className="text-white font-semibold text-lg">
-                  {p.title} →
-                </span>
-              </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Optional Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/0 to-white/0 pointer-events-none"></div>
     </section>
   );
 }
