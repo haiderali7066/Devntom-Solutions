@@ -76,7 +76,7 @@ export default function FAQ() {
             return (
               <div
                 key={i}
-                className={`cursor-pointer p-6 rounded-xl shadow-lg transition-all duration-300
+                className={`cursor-pointer p-4 rounded-xl shadow-lg transition-all duration-300
                   ${
                     isOpen
                       ? "bg-blue-50 border-2 border-blue-600"
@@ -85,7 +85,7 @@ export default function FAQ() {
                 `}
                 onClick={() => setOpenIndex(isOpen ? null : i)}
               >
-                <h3 className="flex justify-between items-center text-lg font-semibold">
+                <h3 className="flex justify-between items-center text-lg font-light">
                   {faq.question}
                   <span
                     className={`text-blue-600 text-xl transition-transform duration-300 ${

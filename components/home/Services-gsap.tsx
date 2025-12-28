@@ -167,9 +167,9 @@ export default function ServicesScroll() {
             ref={(el) => {
               if (el) cardsRef.current[i] = el;
             }}
-            className="bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-lg opacity-0"
+            className="bg-white/80 backdrop-blur-md  p-6 shadow-lg opacity-0"
           >
-            <h3 className="text-lg font-light mb-2">{service.title}</h3>
+            <h3 className="text-lg font-medium mb-2">{service.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               {service.desc}
             </p>

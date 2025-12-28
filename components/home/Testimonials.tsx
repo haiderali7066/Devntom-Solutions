@@ -70,92 +70,89 @@ export default function TestimonialsCarousel() {
   }, [emblaApi]);
 
   return (
-    <section className=" min-h-screen flex justify-center items-center ">
-      {" "}
-      <div>
-        <h2 className="text-center text-4xl font-light mb-14">
-          Don&apos;t just take our words for it –{" "}
-          <span className="text-sky-500">Take theirs!</span>
-        </h2>
+    <section className="py-30">
+      <h2 className="text-center text-4xl font-light mb-14">
+        Don&apos;t just take our words for it –{" "}
+        <span className="text-sky-500">Take theirs!</span>
+      </h2>
 
-        <div className="relative max-w-7xl mx-auto">
-          {/* Arrows */}
-          <button
-            onClick={() => emblaApi?.scrollPrev()}
-            className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 z-10"
-          >
-            <ChevronLeft />
-          </button>
+      <div className="relative max-w-7xl mx-auto">
+        {/* Arrows */}
+        <button
+          onClick={() => emblaApi?.scrollPrev()}
+          className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 z-10"
+        >
+          <ChevronLeft />
+        </button>
 
-          <button
-            onClick={() => emblaApi?.scrollNext()}
-            className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-10"
-          >
-            <ChevronRight />
-          </button>
+        <button
+          onClick={() => emblaApi?.scrollNext()}
+          className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 z-10"
+        >
+          <ChevronRight />
+        </button>
 
-          {/* Carousel */}
-          <div ref={emblaRef} className="overflow-hidden">
-            <div className="flex">
-              {testimonials.map((t, i) => (
+        {/* Carousel */}
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="flex">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="flex-[0_0_100%] sm:flex-[0_0_50%] px-4 sm:px-6"
+              >
                 <div
-                  key={i}
-                  className="flex-[0_0_100%] sm:flex-[0_0_50%] px-4 sm:px-6"
+                  className={cn(
+                    "p-6 sm:p-8 rounded-xl transition-colors min-h-[360px] sm:min-h-[420px]",
+                    i === activeIndex
+                      ? "bg-sky-500 text-white"
+                      : "bg-sky-50 shadow-2xl text-gray-900"
+                  )}
                 >
-                  <div
-                    className={cn(
-                      "p-6 sm:p-8 rounded-xl transition-colors min-h-[360px] sm:min-h-[420px]",
-                      i === activeIndex
-                        ? "bg-sky-500 text-white"
-                        : "bg-sky-50 shadow-2xl text-gray-900"
-                    )}
-                  >
-                    {/* Header */}
-                    <div className="flex items-center gap-4 mb-4 sm:mb-6">
-                      <Image
-                        src={t.image}
-                        alt={t.name}
-                        width={56}
-                        height={56}
-                        className="rounded-full object-cover"
-                      />
-                      <div>
-                        <p className="font-light text-lg">{t.name}</p>
-                        <p className="text-sm opacity-80">{t.role}</p>
-                      </div>
-                    </div>
-
-                    {/* Testimonial Text */}
-                    <p className="text-sm font-light sm:text-xl mb-4 sm:mb-6 leading-relaxed">
-                      {t.text}
-                    </p>
-
-                    {/* Website */}
+                  {/* Header */}
+                  <div className="flex items-center gap-4 mb-4 sm:mb-6">
+                    <Image
+                      src={t.image}
+                      alt={t.name}
+                      width={56}
+                      height={56}
+                      className="rounded-full object-cover"
+                    />
                     <div>
-                      <p className="text-sm font-semibold">{t.website}</p>
-                      <span className="text-sm underline opacity-70">
-                        Read on Upwork
-                      </span>
+                      <p className="font-light text-lg">{t.name}</p>
+                      <p className="text-sm opacity-80">{t.role}</p>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => emblaApi?.scrollTo(i)}
-                className={cn(
-                  "w-2 h-2 rounded-full",
-                  i === activeIndex ? "bg-sky-500" : "bg-gray-300"
-                )}
-              />
+                  {/* Testimonial Text */}
+                  <p className="text-xl font-light sm:text-md mb-4 sm:mb-6 leading-relaxed">
+                    {t.text}
+                  </p>
+
+                  {/* Website */}
+                  <div>
+                    <p className="text-sm font-light">{t.website}</p>
+                    <span className="text-sm underline font-light opacity-70">
+                      Read on Upwork
+                    </span>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => emblaApi?.scrollTo(i)}
+              className={cn(
+                "w-2 h-2 rounded-full",
+                i === activeIndex ? "bg-sky-500" : "bg-gray-300"
+              )}
+            />
+          ))}
         </div>
       </div>
     </section>

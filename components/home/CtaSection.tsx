@@ -31,7 +31,7 @@ export default function CTASection() {
           <div className="mt-6 sm:mt-8">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full transition text-sm sm:text-base md:text-lg"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-sky-500 hover:bg-sky-600 text-white font-light rounded-full transition text-sm sm:text-base md:text-lg"
             >
               Start Your Project
               <span className="text-lg sm:text-xl">→</span>
