@@ -9,12 +9,12 @@ export default function CTASection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/team.jpg')", // Replace with your image
+          backgroundImage: "url('/cta5.jpg')", // Replace with your image
         }}
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">

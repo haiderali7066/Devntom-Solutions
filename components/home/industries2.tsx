@@ -8,7 +8,7 @@ const industries = [
   {
     title: "Health Tech",
     desc: "AI-powered healthcare platforms, EHR systems, telemedicine apps, and secure patient data solutions.",
-    image: "/industries/health.jpg",
+    image: "/health.webp",
   },
   {
     title: "Ed Tech",
@@ -18,7 +18,7 @@ const industries = [
   {
     title: "Retail",
     desc: "Omnichannel retail solutions, POS systems, inventory management, and personalized shopping experiences.",
-    image: "/industries/retail.jpg",
+    image: "/retail.webp",
   },
   {
     title: "AI Diagnostics",

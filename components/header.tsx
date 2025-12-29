@@ -12,13 +12,13 @@ export default function Header() {
   const services = [
     { label: "Website Development", href: "/services/website-development" },
     { label: "Digital Marketing", href: "/services/digital-marketing" },
-    { label: "SEO Optimization", href: "/services/seo-optimization" },
     { label: "App Development", href: "/services/app-development" },
     {
       label: "Software Solutions (POS, EMS, HMS, CRM)",
       href: "/services/software-solutions",
     },
-    { label: "UI/UX-Graphics Design", href: "/services/graphics-designing" },
+    { label: "AI Development", href: "/services/ai" },
+    { label: "UI/UX-Graphics Design", href: "/services/ux-ui-designing" },
   ];
 
   const industries = [
@@ -31,8 +31,8 @@ export default function Header() {
 
   const company = [
     { label: "About Us", href: "/about" },
-    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
+    { label: "Careers", href: "/careers" },
   ];
 
   const resources = [
