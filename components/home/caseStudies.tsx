@@ -3,11 +3,11 @@
 import Image from "next/image";
 
 const insights = [
-  { img: "/insights/insight1.jpg", alt: "Insight 1" },
-  { img: "/insights/insight2.jpg", alt: "Insight 2" },
-  { img: "/insights/insight3.jpg", alt: "Insight 3" },
-  { img: "/insights/insight4.jpg", alt: "Insight 4" },
-  { img: "/insights/insight5.jpg", alt: "Insight 5" },
+  { img: "/cta7.jpg", alt: "Insight 1" },
+  { img: "/cta8.jpg", alt: "Insight 2" },
+  { img: "/cta9.jpg", alt: "Insight 3" },
+  { img: "/cta12.jpg", alt: "Insight 4" },
+  { img: "/cta4.jpg", alt: "Insight 5" },
 ];
 
 export default function FeaturedInsights() {
@@ -26,7 +26,7 @@ export default function FeaturedInsights() {
             strategy to achieve remarkable growth, optimize operations, and
             deliver unparalleled customer experiences.
           </p>
-          <button className="mt-4 px-6 py-3 bg-white text-sky-900 font-semibold rounded-full shadow-lg hover:bg-gray-200 transition">
+          <button className="mt-4 px-6 py-3 text-sky-500 bg-white cta7-900 font-semibold rounded-full shadow-lg hover:bg-gray-200 transition">
             Explore More
           </button>
         </div>

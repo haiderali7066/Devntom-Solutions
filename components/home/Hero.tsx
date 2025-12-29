@@ -45,7 +45,7 @@ export default function HeroVideoPremium() {
       </AnimatePresence>
 
       {/* Video Background */}
-      <video
+      <video 
         autoPlay
         loop
         muted

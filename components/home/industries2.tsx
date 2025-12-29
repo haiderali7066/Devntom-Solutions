@@ -8,27 +8,27 @@ const industries = [
   {
     title: "Health Tech",
     desc: "AI-powered healthcare platforms, EHR systems, telemedicine apps, and secure patient data solutions.",
-    image: "/health.webp",
+    image: "/industries/health.jpg",
   },
   {
     title: "Ed Tech",
     desc: "Scalable learning platforms, LMS systems, virtual classrooms, and AI-driven education tools.",
-    image: "/team.jpg",
+    image: "/industries/edu.jpg",
   },
   {
     title: "Retail",
     desc: "Omnichannel retail solutions, POS systems, inventory management, and personalized shopping experiences.",
-    image: "/retail.webp",
+    image: "/industries/retail.jpg",
   },
   {
     title: "AI Diagnostics",
     desc: "Intelligent diagnostic tools, medical imaging analysis, and predictive AI healthcare models.",
-    image: "/industries/ai.jpg",
+    image: "/industries/ai2.jpg",
   },
   {
     title: "Green Tech",
     desc: "Sustainable software for energy monitoring, carbon tracking, and eco-friendly digital solutions.",
-    image: "/industries/green.jpg",
+    image: "/industries/greentech.jpg",
   },
   {
     title: "IoT",
@@ -43,7 +43,7 @@ const industries = [
   {
     title: "HIPAA Compliance",
     desc: "HIPAA-compliant architectures, secure data handling, encryption, and healthcare compliance audits.",
-    image: "/industries/hipaa.jpg",
+    image: "/industries/hippa.jpg",
   },
 ];
 
