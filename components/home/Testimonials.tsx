@@ -11,45 +11,46 @@ const testimonials = [
     name: "Aram Saffarian",
     role: "President of Treaty Health",
     website: "https://treatyhealth.com",
-    image: "/avatars/1.jpg",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     text: "Devntom Solutions completely transformed our healthcare app, enhancing its functionality and user experience. Their team is highly skilled in web and mobile app development, communicates clearly at every step, and delivers results on schedule. Partnering with them has significantly improved our digital presence and client engagement.",
   },
   {
     name: "Jeff Moye",
     role: "Founder of Moye",
     website: "https://moye.com",
-    image: "/avatars/2.jpg",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
     text: "Working with Devntom Solutions has been an exceptional experience. Their team consistently meets project deadlines while maintaining excellent quality standards. They are experts in custom software development, digital solutions, and project management, making them a trusted partner for our business growth.",
   },
   {
     name: "Bill Kilpatrick",
     role: "CEO of Drive App Suit",
     website: "https://driveappsuit.com",
-    image: "/avatars/3.jpg",
+    image: "https://randomuser.me/api/portraits/men/56.jpg",
     text: "The Devntom Solutions team is professional, reliable, and highly competent. They executed our marketing platform project flawlessly, providing clear updates, valuable suggestions, and creative solutions. Their dedication to client success and technical expertise is unmatched.",
   },
   {
     name: "Samantha Lee",
     role: "CTO of HealthTech Innovations",
     website: "https://healthtechinnovations.com",
-    image: "/avatars/4.jpg",
+    image: "https://randomuser.me/api/portraits/women/22.jpg",
     text: "Devntom Solutions delivered an innovative and scalable solution for our digital platform. Their team is well-versed in the latest technologies, ensuring our software is robust, fast, and user-friendly. Their attention to detail and commitment to quality make them the perfect development partner.",
   },
   {
     name: "David Chen",
     role: "Founder of NextGen Marketing",
     website: "https://nextgenmarketing.com",
-    image: "/avatars/5.jpg",
+    image: "https://randomuser.me/api/portraits/men/68.jpg",
     text: "Partnering with Devntom Solutions accelerated our software development timeline without compromising quality. Their team provides end-to-end solutions, from UI/UX design to backend development, always with transparent communication and expert guidance.",
   },
   {
     name: "Laura Martinez",
     role: "CEO of EcoSmart Solutions",
     website: "https://ecosmartsolutions.com",
-    image: "/avatars/6.jpg",
+    image: "https://randomuser.me/api/portraits/women/35.jpg",
     text: "Devntom Solutions is a highly professional web and app development company. They helped us streamline our digital operations with custom software solutions. Their focus on client satisfaction, innovation, and technical excellence makes them a top choice for businesses seeking reliable technology partners.",
   },
 ];
+
 
 export default function TestimonialsCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({

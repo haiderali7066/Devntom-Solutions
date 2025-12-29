@@ -11,14 +11,22 @@ export default function HeroVideoPremium() {
     return () => clearTimeout(timer);
   }, []);
 
-  const logos = [
-    "/logos/company1.svg",
-    "/logos/company2.svg",
-    "/logos/company3.svg",
-    "/logos/company4.svg",
-    "/logos/company5.svg",
-    "/logos/company6.svg",
-  ];
+const logos = [
+  "https://cdn.simpleicons.org/algolia",
+  "https://cdn.simpleicons.org/digitalocean",
+  "https://cdn.simpleicons.org/cloudflare",
+  "https://cdn.simpleicons.org/ghost",
+  "https://cdn.simpleicons.org/postman",
+  "https://cdn.simpleicons.org/jetbrains",
+  "https://cdn.simpleicons.org/elastic",
+  "https://cdn.simpleicons.org/bitbucket",
+  "https://cdn.simpleicons.org/clickup",
+  "https://cdn.simpleicons.org/tcs",
+  "https://cdn.simpleicons.org/zoho", // SaaS / Productivity
+];
+
+
+
 
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
@@ -97,12 +105,12 @@ export default function HeroVideoPremium() {
 
       {/* Trusted Logos */}
       <div className="absolute bottom-0 w-full bg-black/60 backdrop-blur-md py-4 sm:py-6">
-        <p className="text-center text-xs sm:text-sm text-white/60 mb-4">
+        <p className="text-center font-extralight text-xs sm:text-sm text-white/60 mb-4">
           Trusted by fast-growing companies worldwide
         </p>
 
         <motion.div
-          className="flex gap-16 w-max mx-auto"
+          className="flex gap-30 w-max mx-auto"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, ease: "linear", duration: 22 }}
         >
@@ -111,8 +119,8 @@ export default function HeroVideoPremium() {
               key={i}
               src={logo}
               alt="Trusted company"
-              width={90}
-              height={36}
+              width={30}
+              height={16}
               className="opacity-70 hover:opacity-100 transition"
             />
           ))}
