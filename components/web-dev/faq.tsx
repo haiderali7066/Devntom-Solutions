@@ -61,7 +61,7 @@ export default function FAQ() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-6 max-w-6xl">
-        <h2 className="text-4xl font-bold text-center mb-4">
+        <h2 className="text-4xl font-light text-center mb-4">
           Frequently Asked Questions
         </h2>
         <p className="text-center text-gray-600 mb-12">
@@ -74,7 +74,7 @@ export default function FAQ() {
             return (
               <div
                 key={i}
-                className={`cursor-pointer p-6 rounded-xl shadow-lg transition-all duration-300
+                className={`cursor-pointer p-4 rounded-xl shadow-lg transition-all duration-300
                   ${
                     isOpen
                       ? "bg-blue-50 border-2 border-blue-600"

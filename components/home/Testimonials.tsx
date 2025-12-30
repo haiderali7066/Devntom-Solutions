@@ -125,7 +125,7 @@ export default function TestimonialsCarousel() {
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-xl font-light sm:text-md mb-4 sm:mb-6 leading-relaxed">
+                  <p className=" text-sm lg:text-xl font-light sm:text-md mb-4 sm:mb-6 leading-relaxed">
                     {t.text}
                   </p>
 

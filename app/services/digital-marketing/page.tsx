@@ -108,12 +108,12 @@ export default function DigitalMarketingPageFull() {
           {/* Right Image */}
           <div className="w-full md:w-1/2 mb-12 md:mb-0 relative z-10">
             <motion.img
-              src="https://pixelweby.com/assets/home-banner3.webp"
+              src="https://images.unsplash.com/photo-1686061592689-312bbfb5c055?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGRpZ2l0YWwlMjBzdHJhdGVneXxlbnwwfHwwfHx8MA%3D%3D"
               alt="Digital Marketing Illustration"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="w-full max-w-lg mx-auto"
+              className="w-full max-w-lg mx-auto rounded-2xl"
             />
           </div>
         </div>
@@ -370,8 +370,6 @@ export default function DigitalMarketingPageFull() {
           Book a Free Consultation
         </Link>
       </section>
-
-      
     </div>
   );
 }

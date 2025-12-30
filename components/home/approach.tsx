@@ -123,7 +123,7 @@ export default function ZigzagProcess() {
             {processSteps.map((_, i) => (
               <div
                 key={i}
-                className="globe-point w-4 h-4 bg-sky-500 rounded-full absolute"
+                className="globe-point w-4 h-4 bg-white rounded-full absolute"
                 style={{
                   top: `${
                     50 + Math.sin((i / processSteps.length) * Math.PI * 2) * 35

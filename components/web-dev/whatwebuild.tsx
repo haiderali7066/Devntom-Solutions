@@ -12,52 +12,52 @@ const services = [
   {
     title: "Custom Web Development",
     desc: "We build fully custom, high-performance websites tailored to your business goals, audience, and growth plans — no templates, no shortcuts.",
-    img: "/services/custom-web.webp",
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "E-Commerce Website Development",
     desc: "Conversion-focused online stores with fast checkout, secure payments, inventory management, and scalable architecture built to sell more.",
-    img: "/services/ecommerce.webp",
+    img: "https://cdn.pixabay.com/photo/2017/10/29/17/31/online-2900303_640.jpg", // checkout / store
   },
   {
     title: "Content Management Systems (CMS)",
     desc: "User-friendly CMS websites that let you update content, images, and pages easily — without relying on developers.",
-    img: "/services/cms.webp",
+    img: "https://cdn.pixabay.com/photo/2018/07/25/18/36/ecommerce-3562005_640.jpg", // admin panel / content editor
   },
   {
     title: "Web Application Development",
     desc: "Custom web applications designed for speed, security, and scalability — from dashboards and portals to complex business systems.",
-    img: "/services/web-app.webp",
+    img: "https://cdn.pixabay.com/photo/2018/05/04/20/01/website-3374825_640.jpg", // dashboard / charts
   },
   {
     title: "UI / UX Design",
     desc: "Intuitive, modern user interfaces designed to improve engagement, usability, and conversions across all devices.",
-    img: "/services/ui-ux.webp",
+    img: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "API Integration & Development",
     desc: "Secure and reliable API integrations connecting your website with third-party tools, payment gateways, CRMs, and mobile apps.",
-    img: "/services/api.webp",
+    img: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Website Maintenance & Support",
     desc: "Ongoing website care including updates, bug fixes, backups, performance monitoring, and technical support when you need it.",
-    img: "/services/support.webp",
+    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "SEO-Optimized Website Development",
     desc: "Websites built with clean code, fast load times, and SEO best practices to help you rank higher and attract quality traffic.",
-    img: "/services/seo.webp",
+    img: "https://cdn.pixabay.com/photo/2022/03/26/01/45/seo-7092114_640.png",
   },
   {
     title: "Web Security Solutions",
     desc: "Advanced security measures including SSL, data protection, secure authentication, and vulnerability prevention to keep your site safe.",
-    img: "/services/security.webp",
+    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Website Performance Optimization",
     desc: "Speed optimization focused on Core Web Vitals, fast load times, and smooth user experience across desktop and mobile devices.",
-    img: "/services/performance.webp",
+    img: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=900&q=80",
   },
 ];
 

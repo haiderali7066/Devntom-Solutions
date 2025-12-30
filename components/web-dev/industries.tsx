@@ -71,7 +71,7 @@ export default function IndustriesSection() {
           {industries.map((item, index) => (
             <div
               key={index}
-              className="bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 group rounded-2xl border-sky-200 border"
             >
               <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
               <p className="text-gray-600 mb-6">{item.desc}</p>

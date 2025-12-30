@@ -9,7 +9,7 @@ export default function CTASection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/cta6.jpg')", // Replace with your image
+          backgroundImage: "url('/cta6.jpg')", 
         }}
       />
 

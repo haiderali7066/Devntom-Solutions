@@ -3,11 +3,26 @@
 import Image from "next/image";
 
 const insights = [
-  { img: "/cta7.jpg", alt: "Insight 1" },
-  { img: "/cta8.jpg", alt: "Insight 2" },
-  { img: "/cta9.jpg", alt: "Insight 3" },
-  { img: "/cta12.jpg", alt: "Insight 4" },
-  { img: "/cta4.jpg", alt: "Insight 5" },
+  {
+    img: "https://images.unsplash.com/photo-1526378787940-576a539ba69d?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "Insight 1",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxzZWFyY2h8OHx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D",
+    alt: "Insight 2",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHRlY2h8ZW58MHx8MHx8fDA%3D",
+    alt: "Insight 3",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHRlY2h8ZW58MHx8MHx8fDA%3D",
+    alt: "Insight 4",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fHRlY2h8ZW58MHx8MHx8fDA%3D",
+    alt: "Insight 5",
+  },
 ];
 
 export default function FeaturedInsights() {
